@@ -50,7 +50,7 @@ Only the `VR` subdirectory of the package needs to be installed to the `Oculus` 
 
 *Do note that this package has since been deprecated, please refer to Meta's guide for upgrading your project to the new packages.*
 
-## Architecture
+## Codebase Architecture
 
 All code is located in the following directories:
 
@@ -70,21 +70,22 @@ All code is located in the following directories:
             └── 📁 Utils/
 ```
 
-### `Commands`
+### `📁 Commands`
 For storing the editing history to enable fully undoing and redoing all edits made by the user.
 
 - [`AddCommand.cs`](app/Assets/Scripts/Runtime/Commands/AddCommand.cs)
-- `RemoveCommand.cs`
-- `SelectCommand.cs`
-- `SetPropertyCommand.cs`
-- `TransformCommand.cs`
-- `UndoRedoController.cs`
+- [`RemoveCommand.cs`](app/Assets/Scripts/Runtime/Commands/RemoveCommand.cs)
+- [`SelectCommand.cs`](app/Assets/Scripts/Runtime/Commands/SelectCommand.cs)
+- [`SetPropertyCommand.cs`](app/Assets/Scripts/Runtime/Commands/SetPropertyCommand.cs)
+- [`TransformCommand.cs`](app/Assets/Scripts/Runtime/Commands/TransformCommand.cs)
+- [`UndoRedoController.cs`](app/Assets/Scripts/Runtime/Commands/UndoRedoController.cs)
 
-### `Document`
+### `📁 Document`
+
 Serializable and editable data model of the 3D scene
 
 - 📁 RealityAsset
-    - RealityAsset `A 3D model`
+    - [`RealityAsset.cs`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAsset.cs) A 3D model
     - RealityAssetCollection `A collection of 3D models`
     - RealityAssetsController `Logic for loading 3D models from disk`
 - 📁 RealityShape `A primitive shape with editable properties`
