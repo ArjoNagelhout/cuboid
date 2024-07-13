@@ -50,55 +50,79 @@ Only the `VR` subdirectory of the package needs to be installed to the `Oculus` 
 
 *Do note that this package has since been deprecated, please refer to Meta's guide for upgrading your project to the new packages.*
 
-### Architecture
+## Architecture
 
-High level overview of the codebase. 
+All code is located in the following directories:
 
-- 📁 Scripts
-    - **📁 Editor**
-    - **📁 Runtime**
-        - **📁 Commands** `For storing the editing history to enable fully undoing and redoing all edits made by the user`
-            - AddCommand
-            - RemoveCommand
-            - SelectCommand
-            - SetPropertyCommand
-            - TransformCommand
-            - UndoRedoController
-        - **📁 Document** `Serializable and editable data model of the 3D scene`
-            - 📁 RealityAsset
-                - RealityAsset `A 3D model`
-                - RealityAssetCollection `A collection of 3D models`
-                - RealityAssetsController `Logic for loading 3D models from disk`
-            - 📁 RealityShape `A primitive shape with editable properties`
-                - RoundedCuboidRenderer `Renders a cuboid`
-            - ClipboardController
-            - PropertiesController `Logic for rendering reflected property fields for objects that are selected in the scene`
-            - RealityDocument `Main entrypoint for the data the user can create and store (contains a scene of objects)`
-            - RealityDocumentController `Storing and loading a RealityDocument from disk`
-            - RealityObject `A selectable object inside the RealityDocument`
-            - RealitySceneController `Rendering a scene and instantiating RealityObjects when loaded`
-            - Selection `A simple hashset`
-            - SelectionController `Selection, transform updates and bounds of selected objects`
-            - ThumbnailProvider `Cache layer to avoid retrieving thumbnails from the AssetBundle each time`
-            - TransformData
-        - **📁 Input** `handling of spatial input events from XR controllers, adapted from XR Interaction Toolkit`
-            - 📁 Core
-                - Handedness `Handle right vs left handedness`
-                - RayInteractor
-                - SpatialGraphicRaycaster `Raycasting with UI`
-                - SpatialInputModule `Handling of input events that retains focus for either UI interactions or 3D scene interactions`
-                - SpatialPhysicsRaycaster `Raycasting with 3D scene`
-                - SpatialPointerConfiguration
-                - SpatialPointerEvents
-                - SpatialPointerReticle
-            - 📁 Keyboard `Custom VR keyboard implementation with numeric support`
-            - 📁 XRController `Handling buttons and rendering of controller`
-            - InputController `Mapping button to high level actions`
-        - **📁 Rendering**
-            - PassthroughController `Turning Passthrough on or off`
-            - ScreenshotController `For capturing thumbnails of the scene when saving a document`
-            - SelectionOutlineRendererFeature
-        - **📁 SpatialUI**
-        - **📁 Tools**
-        - **📁 UI**
-        - **📁 Utils**
+```
+└── 📁 Scripts/
+    ├── 📁 Editor/
+    └── 📁 Runtime/
+        ├── 📁 Commands/
+        ├── 📁 Document/
+        ├── 📁 Input/
+        ├── 📁 Rendering/
+        ├── 📁 SpatialUI/
+        ├── 📁 Tools/
+        ├── 📁 UI/
+        └── 📁 Utils/
+```
+
+### `Commands`
+For storing the editing history to enable fully undoing and redoing all edits made by the user.
+
+- AddCommand
+- RemoveCommand
+- SelectCommand
+- SetPropertyCommand
+- TransformCommand
+- UndoRedoController
+
+### `Document`
+Serializable and editable data model of the 3D scene
+
+- 📁 RealityAsset
+    - RealityAsset `A 3D model`
+    - RealityAssetCollection `A collection of 3D models`
+    - RealityAssetsController `Logic for loading 3D models from disk`
+- 📁 RealityShape `A primitive shape with editable properties`
+    - RoundedCuboidRenderer `Renders a cuboid`
+- ClipboardController
+- PropertiesController `Logic for rendering reflected property fields for objects that are selected in the scene`
+- RealityDocument `Main entrypoint for the data the user can create and store (contains a scene of objects)`
+- RealityDocumentController `Storing and loading a RealityDocument from disk`
+- RealityObject `A selectable object inside the RealityDocument`
+- RealitySceneController `Rendering a scene and instantiating RealityObjects when loaded`
+- Selection `A simple hashset`
+- SelectionController `Selection, transform updates and bounds of selected objects`
+- ThumbnailProvider `Cache layer to avoid retrieving thumbnails from the AssetBundle each time`
+- TransformData
+
+### `Input`
+Handling of spatial input events from XR controllers. 
+
+- 📁 Core
+    - Handedness `Handle right and left handedness`
+    - RayInteractor
+    - SpatialGraphicRaycaster `Raycasting with UI`
+    - SpatialInputModule `Handling of input events that retains focus for either UI interactions or 3D scene interactions. Handles stabilization and smoothing of the spatial pointer`
+    - SpatialPhysicsRaycaster `Raycasting with 3D scene`
+    - SpatialPointerConfiguration `Dictates how the spatial pointer should be moved by the user`
+    - SpatialPointerEvents `Events that spatial UI can listen to to create interactable spatial UI`
+    - SpatialPointerReticle `Rendering of the spatial pointer`
+- 📁 Keyboard `Custom VR keyboard implementation with numeric support`
+- 📁 XRController `Handling buttons and rendering of controller`
+- InputController `Mapping button to high level actions`
+
+### `Rendering`
+- PassthroughController `Turning Passthrough on or off`
+- ScreenshotController `For capturing thumbnails of the scene when saving a document`
+- SelectionOutlineRendererFeature
+
+### `SpatialUI`
+
+### `Tools`
+
+### `UI`
+
+### `Utils`
