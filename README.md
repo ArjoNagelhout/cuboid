@@ -72,12 +72,12 @@ All code is located in the following directories:
 ### `Commands`
 For storing the editing history to enable fully undoing and redoing all edits made by the user.
 
-- AddCommand
-- RemoveCommand
-- SelectCommand
-- SetPropertyCommand
-- TransformCommand
-- UndoRedoController
+- `AddCommand.cs`
+- `RemoveCommand.cs`
+- `SelectCommand.cs`
+- `SetPropertyCommand.cs`
+- `TransformCommand.cs`
+- `UndoRedoController.cs`
 
 ### `Document`
 Serializable and editable data model of the 3D scene
