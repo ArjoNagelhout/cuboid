@@ -82,12 +82,12 @@ For storing the editing history to enable fully undoing and redoing all edits ma
 
 ### `📁 Document`
 
-Serializable and editable data model of the 3D scene
+Serializable and editable data model of the 3D scene.
 
-- 📁 RealityAsset
+- `📁 RealityAsset`
     - [`RealityAsset.cs`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAsset.cs) A 3D model
-    - RealityAssetCollection `A collection of 3D models`
-    - RealityAssetsController `Logic for loading 3D models from disk`
+    - [`RealityAssetCollection`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAssetCollection.cs) A collection of 3D models`
+    - [`RealityAssetsController.cs`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAssetsController.cs) Logic for loading 3D models from disk
 - 📁 RealityShape `A primitive shape with editable properties`
     - RoundedCuboidRenderer `Renders a cuboid`
 - ClipboardController
