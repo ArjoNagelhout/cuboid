@@ -49,3 +49,33 @@ The project depends on the [`Oculus Integration`](https://assetstore.unity.com/p
 Only the `VR` subdirectory of the package needs to be installed to the `Oculus` subdirectory. 
 
 *Do note that this package has since been deprecated, please refer to Meta's guide for upgrading your project to the new packages.*
+
+### Architecture
+
+High level overview of the codebase. 
+
+- 📁 Scripts
+    - **📁 Editor**
+    - **📁 Runtime**
+        - **📁 Commands** `For storing the editing history to enable fully undoing and redoing all edits made by the user`
+            - AddCommand
+            - RemoveCommand
+            - SelectCommand
+            - SetPropertyCommand
+            - TransformCommand
+            - UndoRedoController
+        - **📁 Document** `Serializable and editable data model of the 3D scene`
+            - 📁 RealityAsset
+                - RealityAsset `A 3D model`
+                - RealityAssetCollection `A collection of 3D models`
+                - RealityAssetsController `Logic for loading 3D models from disk`
+            - 📁 RealityShape `A primitive shape with editable properties`
+                - RoundedCuboidRenderer `The only shape currently implemented: renders a cuboid with rounded corners`
+            - ClipboardController `Storing cut or copied objects for pasting into the scene`
+            - PropertiesController `Logic for rendering property fields for a given RealityObject`
+        - **📁 Input**
+        - **📁 Rendering**
+        - **📁 SpatialUI**
+        - **📁 Tools**
+        - **📁 UI**
+        - **📁 Utils**
