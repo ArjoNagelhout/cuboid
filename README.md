@@ -169,20 +169,27 @@ Calculating the new position of the *handle* on moving the *spatial pointer* is 
 
 ### `📁 Tools`
 
-- [`AxisHandleTool.cs`](app/Assets/Scripts/Runtime/Tools/AxisHandleTool.cs)
-- [`DefaultSelectBehaviour.cs`](app/Assets/Scripts/Runtime/Tools/DefaultSelectBehaviour.cs)
-- [`DrawShapeTool.cs`](app/Assets/Scripts/Runtime/Tools/DrawShapeTool.cs)
-- [`HandleToolDataScriptableObject.cs`](app/Assets/Scripts/Runtime/Tools/HandleToolDataScriptableObject.cs)
-- [`ModifiersController.cs`](app/Assets/Scripts/Runtime/Tools/ModifiersController.cs)
-- [`OutsideUIBehaviour.cs`](app/Assets/Scripts/Runtime/Tools/OutsideUIBehaviour.cs)
-- [`RotateTool.cs`](app/Assets/Scripts/Runtime/Tools/RotateTool.cs)
-- [`ScaleTool.cs`](app/Assets/Scripts/Runtime/Tools/ScaleTool.cs)
-- [`SelectionBoundsTool.cs`](app/Assets/Scripts/Runtime/Tools/SelectionBoundsTool.cs)
-- [`SelectTool.cs`](app/Assets/Scripts/Runtime/Tools/SelectTool.cs)
-- [`TextTool.cs`](app/Assets/Scripts/Runtime/Tools/TextTool.cs)
-- [`ToolController.cs`](app/Assets/Scripts/Runtime/Tools/ToolController.cs)
-- [`ToolSwitcher.cs`](app/Assets/Scripts/Runtime/Tools/ToolSwitcher.cs)
-- [`TranslateTool.cs`](app/Assets/Scripts/Runtime/Tools/TranslateTool.cs)
+- [`ToolController.cs`](app/Assets/Scripts/Runtime/Tools/ToolController.cs) Instantiates the tool prefab based on the selected tool
+- [`ToolSwitcher.cs`](app/Assets/Scripts/Runtime/Tools/ToolSwitcher.cs) A quick switcher with the joystick between the most commonly used tools. 
+- [`ModifiersController.cs`](app/Assets/Scripts/Runtime/Tools/ModifiersController.cs) Listens to buttons on the non-dominant hand to activate the `Shift` or `Option` modifiers
+- [`OutsideUIBehaviour.cs`](app/Assets/Scripts/Runtime/Tools/OutsideUIBehaviour.cs) Registers listening to events (e.g. when the user clicks or drags) for outside the UI *and* outside spatial UI. 
+
+#### Selection
+
+- [`DefaultSelectBehaviour.cs`](app/Assets/Scripts/Runtime/Tools/DefaultSelectBehaviour.cs) Behaviour for selecting and moving objects when clicking and dragging an object. Depends on `OutsideUIBehaviour`. All handle tools use this behaviour. 
+- [`SelectTool.cs`](app/Assets/Scripts/Runtime/Tools/SelectTool.cs) Uses `DefaultSelectBehaviour`. 
+
+#### Handle tools
+
+- [`AxisHandleTool.cs`](app/Assets/Scripts/Runtime/Tools/AxisHandleTool.cs) Base class for a tool that instantiates handles. Uses `DefaultSelectBehaviour`
+- [`TranslateTool.cs`](app/Assets/Scripts/Runtime/Tools/TranslateTool.cs) Translate the selected objects along their local x, y or z axis, or their x, y or z *plane*. 
+- [`RotateTool.cs`](app/Assets/Scripts/Runtime/Tools/RotateTool.cs) Rotate the selected objects around their local x, y or z axis. 
+- [`ScaleTool.cs`](app/Assets/Scripts/Runtime/Tools/ScaleTool.cs) Scale the selected objects along their local x, y or z axis
+- [`SelectionBoundsTool.cs`](app/Assets/Scripts/Runtime/Tools/SelectionBoundsTool.cs) Scale the selected objects by dragging the corners, edges or faces of the selection bounds, similar to how Adobe Photoshop or Adobe Illustrator has a selection box around the selected items. 
+
+#### Draw tools
+
+- [`DrawShapeTool.cs`](app/Assets/Scripts/Runtime/Tools/DrawShapeTool.cs) Depends on `OutsideUIBehaviour`. For drawing a primitive shape (see [`RealityShape.cs`](app/Assets/Scripts/Runtime/Document/RealityShape/RealityShape.cs) in `📁 Document`) in 3D space. 
 
 ### `📁 UI`
 
