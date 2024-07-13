@@ -48,7 +48,7 @@ The project depends on the [`Oculus Integration`](https://assetstore.unity.com/p
 
 Only the `VR` subdirectory of the package needs to be installed to the `Oculus` subdirectory. 
 
-*Do note that this package has since been deprecated, please refer to Meta's guide for upgrading your project to the new packages.*
+*⚠️ Note that this package has since been deprecated, please refer to Meta's guide for upgrading your project to the new packages.*
 
 ## Codebase Architecture
 
