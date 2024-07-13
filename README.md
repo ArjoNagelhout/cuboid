@@ -39,8 +39,8 @@ See `Packages/manifest.json` for all packages. Other than those above, it only c
 
 These are free and paid plugins retrieved from the **Unity AssetStore** and should be installed to the `Plugins` folder. 
 
-- [DOTween by Demigiant](https://dotween.demigiant.com/download.php) `> 1.2.000`
-- [Shapes by Freya Holmér](https://acegikmo.com/shapes/) `4.2.1`
+- [DOTween by Demigiant](https://dotween.demigiant.com/download.php) `> 1.2.000` (free)
+- [Shapes by Freya Holmér](https://acegikmo.com/shapes/) `4.2.1` (⚠️ paid)
 
 ### Oculus Package
 
