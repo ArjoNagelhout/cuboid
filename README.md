@@ -72,7 +72,12 @@ High level overview of the codebase.
             - 📁 RealityShape `A primitive shape with editable properties`
                 - RoundedCuboidRenderer `The only shape currently implemented: renders a cuboid with rounded corners`
             - ClipboardController `Storing cut or copied objects for pasting into the scene`
-            - PropertiesController `Logic for rendering property fields for a given RealityObject`
+            - PropertiesController `Logic for rendering property fields for objects that are selected in the scene`
+            - RealityColor `Color stored either as RGB or HSV (so that no data is lost while editing)`
+            - RealityDocument `Main entrypoint for the data the user can create and store (a list of scenes with each scene containing a set of objects)`
+            - RealityDocumentController `Responsible for storing and loading a RealityDocument to and from disk`
+            - RealityDocumentFileInformation `Information retrieved about the file that is not stored inside the RealityDocument`
+            - RealityObject `a selectable object inside the RealityDocument`
         - **📁 Input**
         - **📁 Rendering**
         - **📁 SpatialUI**
