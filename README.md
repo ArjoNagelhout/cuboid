@@ -89,8 +89,8 @@ Top level scripts inside `📁 Runtime`:
 
 - [`App.cs`](app/Assets/Scripts/Runtime/App.cs) Main 
 - [`ApplicationData.cs`](app/Assets/Scripts/Runtime/ApplicationData.cs)
-- [`Binding.cs`](app/Assets/Scripts/Runtime/Binding.cs)
-- [`CacheController.cs`](app/Assets/Scripts/Runtime/CacheController.cs)
+- [`Binding.cs`](app/Assets/Scripts/Runtime/Binding.cs) Utility class for binding a value to a UI element to keep the UI and data model in sync. 
+- [`CacheController.cs`](app/Assets/Scripts/Runtime/CacheController.cs) Enables the user to clear the cache and to inspect its size
 - [`ColorsController.cs`](app/Assets/Scripts/Runtime/ColorsController.cs)
 - [`Constants.cs`](app/Assets/Scripts/Runtime/Constants.cs)
 - [`Layers.cs`](app/Assets/Scripts/Runtime/Layers.cs)
@@ -106,7 +106,7 @@ For storing the editing history to enable fully undoing and redoing all edits ma
 - [`AddCommand.cs`](app/Assets/Scripts/Runtime/Commands/AddCommand.cs) Add RealityObject to the scene
 - [`RemoveCommand.cs`](app/Assets/Scripts/Runtime/Commands/RemoveCommand.cs) Remove RealityObject from the scene
 - [`SelectCommand.cs`](app/Assets/Scripts/Runtime/Commands/SelectCommand.cs) Select or deselect a set of RealityObjects
-- [`SetPropertyCommand.cs`](app/Assets/Scripts/Runtime/Commands/SetPropertyCommand.cs) Set a property of a set of RealityObjects with the same type
+- [`SetPropertyCommand.cs`](app/Assets/Scripts/Runtime/Commands/SetPropertyCommand.cs) Set a property of a set of RealityObjects that have the same type
 - [`TransformCommand.cs`](app/Assets/Scripts/Runtime/Commands/TransformCommand.cs) Transform a set of objects using a TRS matrix transform
 
 ### `📁 Document`
@@ -131,7 +131,7 @@ Serializable and editable data model of a 3D scene. A `RealityDocument` is the d
 
 - [`📁 RealityAsset/RealityAssetsController.cs`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAssetsController.cs) Logic for loading 3D models from disk
 - [`ClipboardController.cs`](app/Assets/Scripts/Runtime/Document/ClipboardController.cs) Stores cut or copied objects
-- [`PropertiesController.cs`](app/Assets/Scripts/Runtime/Document/PropertiesController.cs) Logic for rendering reflected property fields for objects that are selected in the scene
+- [`PropertiesController.cs`](app/Assets/Scripts/Runtime/Document/PropertiesController.cs) Logic for rendering reflected property fields in the UI for objects that are selected in the scene
 - [`RealityDocumentController.cs`](app/Assets/Scripts/Runtime/Document/RealityDocumentController.cs) Storing and loading a RealityDocument from disk
 - [`RealitySceneController`](app/Assets/Scripts/Runtime/Document/RealitySceneController.cs) Rendering a scene and instantiating RealityObjects when loaded
 - [`SelectionController.cs`](app/Assets/Scripts/Runtime/Document/SelectionController.cs) Selection, transform updates and bounds of selected objects
