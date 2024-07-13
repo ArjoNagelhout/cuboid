@@ -99,12 +99,15 @@ Top level scripts inside `📁 Runtime`:
 ### `📁 Commands`
 For storing the editing history to enable fully undoing and redoing all edits made by the user. This employs the command pattern. Commands can be nested and/or combined to create compound commands, e.g. for selecting and moving objects on click and drag. 
 
-- [`AddCommand.cs`](app/Assets/Scripts/Runtime/Commands/AddCommand.cs)
-- [`RemoveCommand.cs`](app/Assets/Scripts/Runtime/Commands/RemoveCommand.cs)
-- [`SelectCommand.cs`](app/Assets/Scripts/Runtime/Commands/SelectCommand.cs)
-- [`SetPropertyCommand.cs`](app/Assets/Scripts/Runtime/Commands/SetPropertyCommand.cs)
-- [`TransformCommand.cs`](app/Assets/Scripts/Runtime/Commands/TransformCommand.cs)
 - [`UndoRedoController.cs`](app/Assets/Scripts/Runtime/Commands/UndoRedoController.cs)
+
+#### Commands
+
+- [`AddCommand.cs`](app/Assets/Scripts/Runtime/Commands/AddCommand.cs) Add RealityObject to the scene
+- [`RemoveCommand.cs`](app/Assets/Scripts/Runtime/Commands/RemoveCommand.cs) Remove RealityObject from the scene
+- [`SelectCommand.cs`](app/Assets/Scripts/Runtime/Commands/SelectCommand.cs) Select or deselect a set of RealityObjects
+- [`SetPropertyCommand.cs`](app/Assets/Scripts/Runtime/Commands/SetPropertyCommand.cs) Set a property of a set of RealityObjects with the same type
+- [`TransformCommand.cs`](app/Assets/Scripts/Runtime/Commands/TransformCommand.cs) Transform a set of objects using a TRS matrix transform
 
 ### `📁 Document`
 
@@ -112,22 +115,27 @@ Serializable and editable data model of a 3D scene. A `RealityDocument` is the d
 
 3D assets are not stored inside the `RealityDocument` but stored as a reference to a `RealityAssetCollection`, which wraps a Unity AssetBundle. These `RealityAssetCollection`s are created with [`com.cuboid.unity-plugin`](https://github.com/ShapeReality/com.cuboid.unity-plugin). 
 
+#### Data model
+
+- [`RealityDocument.cs`](app/Assets/Scripts/Runtime/Document/RealityDocument.cs) Main data model
+- [`TransformData.cs`](app/Assets/Scripts/Runtime/Document/TransformData.cs)
+- [`RealityObject.cs`](app/Assets/Scripts/Runtime/Document/RealityObject.cs) A selectable object inside the RealityDocument
 - `📁 RealityAsset`
     - [`RealityAsset.cs`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAsset.cs) A 3D model
     - [`RealityAssetCollection`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAssetCollection.cs) A collection of 3D models`
-    - [`RealityAssetsController.cs`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAssetsController.cs) Logic for loading 3D models from disk
 - `📁 RealityShape` A primitive shape with editable properties
     - [`RoundedCuboidRenderer.cs`](app/Assets/Scripts/Runtime/Document/RealityShape/RoundedCuboidRenderer.cs) Renders a cuboid
+- [`Selection.cs`](app/Assets/Scripts/Runtime/Document/Selection.cs) A simple hashset of objects
+
+#### Controllers
+
+- [`📁 RealityAsset/RealityAssetsController.cs`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAssetsController.cs) Logic for loading 3D models from disk
 - [`ClipboardController.cs`](app/Assets/Scripts/Runtime/Document/ClipboardController.cs) Stores cut or copied objects
 - [`PropertiesController.cs`](app/Assets/Scripts/Runtime/Document/PropertiesController.cs) Logic for rendering reflected property fields for objects that are selected in the scene
-- [`RealityDocument.cs`](app/Assets/Scripts/Runtime/Document/RealityDocument.cs) Main data model
 - [`RealityDocumentController.cs`](app/Assets/Scripts/Runtime/Document/RealityDocumentController.cs) Storing and loading a RealityDocument from disk
-- [`RealityObject.cs`](app/Assets/Scripts/Runtime/Document/RealityObject.cs) A selectable object inside the RealityDocument
 - [`RealitySceneController`](app/Assets/Scripts/Runtime/Document/RealitySceneController.cs) Rendering a scene and instantiating RealityObjects when loaded
-- [`Selection.cs`](app/Assets/Scripts/Runtime/Document/Selection.cs) A simple hashset of objects
 - [`SelectionController.cs`](app/Assets/Scripts/Runtime/Document/SelectionController.cs) Selection, transform updates and bounds of selected objects
 - [`ThumbnailProvider.cs`](app/Assets/Scripts/Runtime/Document/ThumbnailProvider.cs) Cache layer to avoid retrieving thumbnails from the AssetBundle each time
-- [`TransformData.cs`](app/Assets/Scripts/Runtime/Document/TransformData.cs)
 
 ### `📁 Input`
 
@@ -152,7 +160,7 @@ Not much to see here, as Unity handles all rendering.
 
 - [`PassthroughController.cs`](app/Assets/Scripts/Runtime/Rendering/PassthroughController.cs) Turning Passthrough on or off
 - [`ScreenshotController.cs`](app/Assets/Scripts/Runtime/Rendering/ScreenshotController.cs) For capturing thumbnails of the scene when saving a document
-- [`SelectionOutlineRendererFeature.cs`](app/Assets/Scripts/Runtime/Rendering/SelectionOutlineRendererFeature.cs) custom URP render feature that renders selected objects' outlines
+- [`SelectionOutlineRendererFeature.cs`](app/Assets/Scripts/Runtime/Rendering/SelectionOutlineRendererFeature.cs) Custom URP render feature that renders selected objects' outlines
 
 ### `📁 SpatialUI`
 
