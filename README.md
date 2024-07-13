@@ -1,6 +1,7 @@
 ## Discontinuation notice
 
-Due to Unity's changes to their plans and pricing, I sadly had to make the decision to discontinue the development of this app, as it has a hard dependency on the Unity game engine. 
+Due to Unity's pricing changes, I made the decision to discontinue the development of this app, as rewriting it using a different 3D graphics framework or game engine would be too costly and time intensive. 
+
 Some of the code and design decisions inside this repository might help someone develop something similar, which is why I have decided to make the source available. 
 
 # Cuboid
@@ -52,6 +53,20 @@ Only the `VR` subdirectory of the package needs to be installed to the `Oculus` 
 
 ## Codebase Architecture
 
+### Unity Scenes and Prefabs
+
+There are two main Unity Scenes that compose the app. These are the main entrypoints of the application: 
+
+1. [`AppEditor`](app/Assets/Scenes/AppEditor.unity) The main scene for testing the application directly inside the Editor with the `XR Device Simulator`. 
+2. [`AppRuntime`](app/Assets/Scenes/AppRuntime.unity) The main scene that gets run on the XR device, which does *not* contain the simulator. 
+
+Both scenes contain the [`App`](app/Assets/Prefabs/App.prefab) prefab, which contain prefabs for each *controller* described below (e.g. `UndoRedoController`, `RealitySceneController` and `ToolController`). 
+
+The only difference is that the `AppEditor` scene contains the [`EditorXRRig`](app/Assets/Prefabs/Input/EditorXRRig.prefab), and `AppRuntime` contains the [`RuntimeXRRig`](app/Assets/Prefabs/Input/RuntimeXRRig.prefab). 
+
+
+### Scripts
+
 All code is located in the following directories:
 
 ```
@@ -69,6 +84,17 @@ All code is located in the following directories:
             ├── 📁 UI/
             └── 📁 Utils/
 ```
+
+Top level scripts inside `📁 Runtime`:
+
+- [`App.cs`](app/Assets/Scripts/Runtime/App.cs) Main 
+- [`ApplicationData.cs`](app/Assets/Scripts/Runtime/ApplicationData.cs)
+- [`Binding.cs`](app/Assets/Scripts/Runtime/Binding.cs)
+- [`CacheController.cs`](app/Assets/Scripts/Runtime/CacheController.cs)
+- [`ColorsController.cs`](app/Assets/Scripts/Runtime/ColorsController.cs)
+- [`Constants.cs`](app/Assets/Scripts/Runtime/Constants.cs)
+- [`Layers.cs`](app/Assets/Scripts/Runtime/Layers.cs)
+- [`UserData.cs`](app/Assets/Scripts/Runtime/UserData.cs)
 
 ### `📁 Commands`
 For storing the editing history to enable fully undoing and redoing all edits made by the user. This employs the command pattern. Commands can be nested and/or combined to create compound commands, e.g. for selecting and moving objects on click and drag. 
@@ -94,40 +120,70 @@ Serializable and editable data model of a 3D scene. A `RealityDocument` is the d
     - [`RoundedCuboidRenderer.cs`](app/Assets/Scripts/Runtime/Document/RealityShape/RoundedCuboidRenderer.cs) Renders a cuboid
 - [`ClipboardController.cs`](app/Assets/Scripts/Runtime/Document/ClipboardController.cs) Stores cut or copied objects
 - [`PropertiesController.cs`](app/Assets/Scripts/Runtime/Document/PropertiesController.cs) Logic for rendering reflected property fields for objects that are selected in the scene
-- [`RealityDocument.cs`](app/Assets/Scripts/Runtime/Document/RealityDocument.cs) See above
+- [`RealityDocument.cs`](app/Assets/Scripts/Runtime/Document/RealityDocument.cs) Main data model
 - [`RealityDocumentController.cs`](app/Assets/Scripts/Runtime/Document/RealityDocumentController.cs) Storing and loading a RealityDocument from disk
 - [`RealityObject.cs`](app/Assets/Scripts/Runtime/Document/RealityObject.cs) A selectable object inside the RealityDocument
 - [`RealitySceneController`](app/Assets/Scripts/Runtime/Document/RealitySceneController.cs) Rendering a scene and instantiating RealityObjects when loaded
-- [`Selection`](app/Assets/Scripts/Runtime/Document/Selection.cs) `A simple hashset of objects`
-- SelectionController `Selection, transform updates and bounds of selected objects`
-- ThumbnailProvider `Cache layer to avoid retrieving thumbnails from the AssetBundle each time`
-- TransformData
+- [`Selection.cs`](app/Assets/Scripts/Runtime/Document/Selection.cs) A simple hashset of objects
+- [`SelectionController.cs`](app/Assets/Scripts/Runtime/Document/SelectionController.cs) Selection, transform updates and bounds of selected objects
+- [`ThumbnailProvider.cs`](app/Assets/Scripts/Runtime/Document/ThumbnailProvider.cs) Cache layer to avoid retrieving thumbnails from the AssetBundle each time
+- [`TransformData.cs`](app/Assets/Scripts/Runtime/Document/TransformData.cs)
 
-### `Input`
-Handling of spatial input events from XR controllers. 
+### `📁 Input`
 
-- 📁 Core
-    - Handedness `Handle right and left handedness`
-    - RayInteractor
-    - SpatialGraphicRaycaster `Raycasting with UI`
-    - SpatialInputModule `Handling of input events that retains focus for either UI interactions or 3D scene interactions. Handles stabilization and smoothing of the spatial pointer`
-    - SpatialPhysicsRaycaster `Raycasting with 3D scene`
-    - SpatialPointerConfiguration `Dictates how the spatial pointer should be moved by the user`
-    - SpatialPointerEvents `Events that spatial UI can listen to to create interactable spatial UI`
-    - SpatialPointerReticle `Rendering of the spatial pointer`
-- 📁 Keyboard `Custom VR keyboard implementation with numeric support`
-- 📁 XRController `Handling buttons and rendering of controller`
-- InputController `Mapping button to high level actions`
+Handling of spatial input events from XR controllers. Part of this is adopted and modified from the XR Interaction Toolkit, as the XR Interaction Toolkit proved insufficient for achieving the exact interactions expected in a design application. 
 
-### `Rendering`
-- PassthroughController `Turning Passthrough on or off`
-- ScreenshotController `For capturing thumbnails of the scene when saving a document`
-- SelectionOutlineRendererFeature
+- `📁 Core`
+    - [`Handedness.cs`](app/Assets/Scripts/Runtime/Input/Core/Handedness.cs) Handle left- and right-handedness
+    - [`RayInteractor.cs`](app/Assets/Scripts/Runtime/Input/Core/RayInteractor.cs)
+    - [`SpatialGraphicRaycaster.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialGraphicRaycaster.cs) Raycasting with UI
+    - [`SpatialInputModule.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialInputModule.cs) Handling of input events that retains focus for either UI interactions or 3D scene interactions. Handles stabilization and smoothing of the spatial pointer
+    - [`SpatialPhysicsRaycaster.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialPhysicsRaycaster.cs) Raycasting with 3D scene
+    - [`SpatialPointerConfiguration.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialPointerConfiguration.cs) Dictates how the spatial pointer should be moved by the user
+    - [`SpatialPointerEvents.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialPointerEvents.cs) Events that spatial UI can listen to to create interactable spatial UI
+    - [`SpatialPointerReticle.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialPointerReticle.cs) Rendering of the spatial pointer
+- `📁 Keyboard` Custom VR keyboard implementation with numeric support
+- `📁 XRController` Handling buttons and rendering of controller
+- [`InputController.cs`](app/Assets/Scripts/Runtime/Input/InputController.cs) Mapping button to high level actions
 
-### `SpatialUI`
+### `📁 Rendering`
 
-### `Tools`
+Not much to see here, as Unity handles all rendering. 
 
-### `UI`
+- [`PassthroughController.cs`](app/Assets/Scripts/Runtime/Rendering/PassthroughController.cs) Turning Passthrough on or off
+- [`ScreenshotController.cs`](app/Assets/Scripts/Runtime/Rendering/ScreenshotController.cs) For capturing thumbnails of the scene when saving a document
+- [`SelectionOutlineRendererFeature.cs`](app/Assets/Scripts/Runtime/Rendering/SelectionOutlineRendererFeature.cs) custom URP render feature that renders selected objects' outlines
 
-### `Utils`
+### `📁 SpatialUI`
+
+The handles defined in SpatialUI purely contain data and implement the interfaces defined in [`SpatialPointerEvents.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialPointerEvents.cs) in `📁 Input`. 
+
+Calculating the new position of the *handle* on moving the *spatial pointer* is performed by the tools in `📁 Tools`. These tools are also responsible for instantiating these handles. 
+
+- [`AxisHandle.cs`](app/Assets/Scripts/Runtime/SpatialUI/AxisHandle.cs) Contains additional data for which axis (x, y or z) this handle would edit
+- [`Handle.cs`](app/Assets/Scripts/Runtime/SpatialUI/Handle.cs) Base class that implements the interfaces defined in [`SpatialPointerEvents.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialPointerEvents.cs)
+- [`SelectionBoundsHandle.cs`](app/Assets/Scripts/Runtime/SpatialUI/SelectionBoundsHandle.cs) Handle for the corner, edge or face of a selection bounds
+- [`SpatialContextMenu.cs`](app/Assets/Scripts/Runtime/SpatialUI/SpatialContextMenu.cs) A simple menu that moves in front of the view of the user
+- [`TranslateHandle.cs`](app/Assets/Scripts/Runtime/SpatialUI/TranslateHandle.cs) Contains additional data for whether the handle is a plane or axis handle
+- [`Visuals.cs`](app/Assets/Scripts/Runtime/SpatialUI/Visuals.cs) Show origin and grid in scene
+
+### `📁 Tools`
+
+- [`AxisHandleTool.cs`](app/Assets/Scripts/Runtime/Tools/AxisHandleTool.cs)
+- [`DefaultSelectBehaviour.cs`](app/Assets/Scripts/Runtime/Tools/DefaultSelectBehaviour.cs)
+- [`DrawShapeTool.cs`](app/Assets/Scripts/Runtime/Tools/DrawShapeTool.cs)
+- [`HandleToolDataScriptableObject.cs`](app/Assets/Scripts/Runtime/Tools/HandleToolDataScriptableObject.cs)
+- [`ModifiersController.cs`](app/Assets/Scripts/Runtime/Tools/ModifiersController.cs)
+- [`OutsideUIBehaviour.cs`](app/Assets/Scripts/Runtime/Tools/OutsideUIBehaviour.cs)
+- [`RotateTool.cs`](app/Assets/Scripts/Runtime/Tools/RotateTool.cs)
+- [`ScaleTool.cs`](app/Assets/Scripts/Runtime/Tools/ScaleTool.cs)
+- [`SelectionBoundsTool.cs`](app/Assets/Scripts/Runtime/Tools/SelectionBoundsTool.cs)
+- [`SelectTool.cs`](app/Assets/Scripts/Runtime/Tools/SelectTool.cs)
+- [`TextTool.cs`](app/Assets/Scripts/Runtime/Tools/TextTool.cs)
+- [`ToolController.cs`](app/Assets/Scripts/Runtime/Tools/ToolController.cs)
+- [`ToolSwitcher.cs`](app/Assets/Scripts/Runtime/Tools/ToolSwitcher.cs)
+- [`TranslateTool.cs`](app/Assets/Scripts/Runtime/Tools/TranslateTool.cs)
+
+### `📁 UI`
+
+### `📁 Utils`
