@@ -70,21 +70,48 @@ High level overview of the codebase.
                 - RealityAssetCollection `A collection of 3D models`
                 - RealityAssetsController `Logic for loading 3D models from disk`
             - 📁 RealityShape `A primitive shape with editable properties`
-                - RoundedCuboidRenderer `renders a cuboid`
+                - RoundedCuboidRenderer `Renders a cuboid`
             - ClipboardController
             - PropertiesController `Logic for rendering reflected property fields for objects that are selected in the scene`
             - RealityColor `Color stored either as RGB or HSV (so that no data is lost while editing)`
             - RealityDocument `Main entrypoint for the data the user can create and store`
-            - RealityDocumentController `storing and loading a RealityDocument from disk`
+            - RealityDocumentController `Storing and loading a RealityDocument from disk`
             - RealityDocumentFileInformation
-            - RealityObject `a selectable object inside the RealityDocument`
-            - RealitySceneController `rendering a scene and instantiating RealityObjects when loaded`
-            - Selection `a simple hashset`
-            - SelectionController `selection, transform updates and bounds of selected objects`
-            - ThumbnailProvider `cache layer to avoid retrieving thumbnails from the AssetBundle`
+            - RealityObject `A selectable object inside the RealityDocument`
+            - RealitySceneController `Rendering a scene and instantiating RealityObjects when loaded`
+            - Selection `A simple hashset`
+            - SelectionController `Selection, transform updates and bounds of selected objects`
+            - ThumbnailProvider `Cache layer to avoid retrieving thumbnails from the AssetBundle each time`
             - TransformData
-        - **📁 Input**
+        - **📁 Input** `handling of spatial input events from XR controllers, adapted from XR Interaction Toolkit`
+            - 📁 Core
+                - ExecuteEvents
+                - Handedness `Handle right vs left handedness`
+                - RayInteractor
+                - SortUtils
+                - SpatialGraphicRaycaster `Raycasting with UI`
+                - SpatialInputModule `Handling of input events that retains focus for either UI interactions or 3D scene interactions`
+                - SpatialPhysicsRaycaster `Raycasting with 3D scene`
+                - SpatialPointerConfiguration
+                - SpatialPointerEventData
+                - SpatialPointerEvents
+                - SpatialPointerReticle
+                - SpatialPointerReticleData
+            - 📁 Data `Scriptable objects`
+                - RayInteractorVisualsScriptableObject
+                - SpatialPointerReticleDataComponent
+            - 📁 Keyboard `Custom VR keyboard implementation with numeric support`
+                - FullKeyboardPopup
+                - NumericKeyboardPopup
+                - VirtualKeyboard
+            - 📁 XRController `Handling buttons and rendering of controller`
+                - XRController
+                - XRControllerVisual
+            - InputController `Mapping button to high level actions such as Select or Modifier Key 1 pressed`
         - **📁 Rendering**
+            - PassthroughController `Turning Passthrough on or off`
+            - ScreenshotController `For capturing thumbnails of the scene when saving a document`
+            - SelectionOutlineRendererFeature
         - **📁 SpatialUI**
         - **📁 Tools**
         - **📁 UI**
