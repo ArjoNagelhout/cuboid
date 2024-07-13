@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0ad457a203c54e45b5b365d3b8f8d5b, type: 3}
+  m_Name: Icons
+  m_EditorClassIdentifier: 
+  Backspace: {fileID: 21300000, guid: 92178d2f5ca674709ba349d7ed15c978, type: 3}
+  Cursor: {fileID: 21300000, guid: 35c78ca4beb6745049b758327b7db581, type: 3}
+  OutlineDraw: {fileID: 21300000, guid: 5e9ba289833ea4f759ebc5bc7ded0f4a, type: 3}
+  KeyboardShiftKey: {fileID: 21300000, guid: 3974309537060422b951710dadf0e280, type: 3}
+  HandRight: {fileID: 21300000, guid: 192298df8e46f4b60ab4a4ed27ca77af, type: 3}
+  HandLeft: {fileID: 21300000, guid: 21f9fc9a931e74a1ab29a26eb4164ec3, type: 3}
+  BusinessCenter: {fileID: 21300000, guid: 47dac4f958a0f48cd88e06367255e204, type: 3}
+  Close: {fileID: 21300000, guid: 2d8c1a3857a074606942dfd4d142281c, type: 3}
+  CropSquare: {fileID: 21300000, guid: f7ec24593f2424ef0a610fa138daf1f6, type: 3}
+  DeleteForever: {fileID: 21300000, guid: 23a8f9c9ed6e0436fba2fbff0fadc51c, type: 3}
+  Delete: {fileID: 21300000, guid: 62740de4b9881454a97b04f212a3d610, type: 3}
+  Edit: {fileID: 21300000, guid: a03cca99b2b1248aba8ae80cbdc3e68f, type: 3}
+  FileCopy: {fileID: 21300000, guid: 67e3bc698cc77484bbb8f81079548726, type: 3}
+  FileOpen: {fileID: 21300000, guid: 14ebdc0f3e0584d1e956f3df917cf50d, type: 3}
+  Folder: {fileID: 21300000, guid: ae5bc14cb8bec4cb0a35c80b7dcd7cf6, type: 3}
+  Info: {fileID: 21300000, guid: d97f3516a8c414732ba0d0d6a5217e36, type: 3}
+  IOSShare: {fileID: 21300000, guid: c86ff5a4723a8487fb53d162a48a58d0, type: 3}
+  KeyboardOptionKey: {fileID: 21300000, guid: 7e9c770fdb92b45009cb78fe3717049a, type: 3}
+  More: {fileID: 21300000, guid: 26adf3c625e6144598c4773137fdb162, type: 3}
+  PointingFinger: {fileID: 21300000, guid: 8ac95c7dd775140eb90a36da53bff171, type: 3}
+  Redo: {fileID: 21300000, guid: 3b60107980c2f46b6b1954f3a8427b1d, type: 3}
+  Refresh: {fileID: 21300000, guid: ca4165d75a96f4db0ac2b4190b05b457, type: 3}
+  RemoveCircle: {fileID: 21300000, guid: 5c876ddff43a24fe2a3ef13373bfde87, type: 3}
+  RestoreFromTrash: {fileID: 21300000, guid: 234899a536ff843988f70d687d6353f6, type: 3}
+  Settings: {fileID: 21300000, guid: 745838ad82e5e41e28639dcee1913b3d, type: 3}
+  Undo: {fileID: 21300000, guid: 03f699db070d34ca6a80d32eee58ce74, type: 3}
+  Widget: {fileID: 21300000, guid: afc45d309bce84931955b3b9e41b0faa, type: 3}
+  ContentCut: {fileID: 21300000, guid: b3f3b761ebb784081a3987d843c61ead, type: 3}
+  ContentCopy: {fileID: 21300000, guid: c0872bd03854e441aaff2dbf6929d7e9, type: 3}
+  ContentPaste: {fileID: 21300000, guid: 6413f48884fca425da8064ab30a7eb74, type: 3}
+  ContentDuplicate: {fileID: 21300000, guid: ee19670b2bed64909a6ce8668f98e370, type: 3}
+  Language: {fileID: 21300000, guid: 8173aa2c89da141e89aa7a7ca21cf84a, type: 3}
+  KeyboardHide: {fileID: 21300000, guid: f0574ed114a6f44bbb141ff169d8e861, type: 3}
+  Check: {fileID: 21300000, guid: 73e532bc792524418a27eef641293625, type: 3}
+  DeleteSweep: {fileID: 21300000, guid: 4ac1a27c671ca4ad9a41aacadc35c199, type: 3}
+  Title: {fileID: 21300000, guid: f6bb0ddf864e44adcae97a91b797891a, type: 3}
+  FormatAlignCenter: {fileID: 21300000, guid: 5ee85a274acf54cebb7705d191030034, type: 3}
+  FormatAlignRight: {fileID: 21300000, guid: 760810b98b55d49819ae7284ffc64bc5, type: 3}
+  FormatAlignLeft: {fileID: 21300000, guid: e2e2c5c1485db40af92edf2bdc375355, type: 3}
+  FormatAlignJustify: {fileID: 21300000, guid: 35e23318d6bf44ed6b85db5433f9f35a, type: 3}
+  FormatBold: {fileID: 21300000, guid: 86ce7cb01c2da44d488794864efb6d49, type: 3}
+  FormatItalic: {fileID: 21300000, guid: 5e5752dbc4d6a40e795bedc1476781fb, type: 3}
+  Warning: {fileID: 21300000, guid: 1ac49444643ac418194e5bd3da150472, type: 3}
+  Error: {fileID: 21300000, guid: 8ec09ce861e6d4bd682dd3641da4a546, type: 3}
+  Cloud: {fileID: 21300000, guid: ef5705eee74754714b4281cb2d0eef10, type: 3}
+  Extension: {fileID: 21300000, guid: 6410a39fcc5374093abd1f8d8f3a2417, type: 3}

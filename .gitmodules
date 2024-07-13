@@ -1,0 +1,3 @@
+[submodule "com.cuboid.unity-plugin"]
+	path = com.cuboid.unity-plugin
+	url = https://github.com/ShapeReality/com.cuboid.unity-plugin.git

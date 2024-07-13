@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12323, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ShapeRealityColors
+  m_EditorClassIdentifier: 
+  m_Presets:
+  - m_Name: 
+    m_Color: {r: 0.019607844, g: 0.3019608, b: 0.654902, a: 1}
+  - m_Name: 
+    m_Color: {r: 0.03529412, g: 0.41960785, b: 1, a: 1}
+  - m_Name: 
+    m_Color: {r: 0.4481132, g: 0.78547525, b: 1, a: 1}
+  - m_Name: 
+    m_Color: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
+  - m_Name: Popup underlay
+    m_Color: {r: 0, g: 0.22745098, b: 0.5019608, a: 0.3882353}
+  - m_Name: tooltip
+    m_Color: {r: 0, g: 0, b: 0, a: 0.69803923}

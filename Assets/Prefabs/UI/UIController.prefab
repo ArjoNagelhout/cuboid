@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4587043354390095858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4587043354390095857}
+  - component: {fileID: 4587043354390095856}
+  m_Layer: 0
+  m_Name: UIController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4587043354390095857
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4587043354390095858}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4587043354390095856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4587043354390095858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62a3dad2ed61d487188b3c439152a428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dockOffset: 0.054
+  _mainOffset: 0.2
+  _dockPrefab: {fileID: 4862600880568230992, guid: b15de29689fa94cd59ed965911357394, type: 3}
+  _mainPrefab: {fileID: 6544231029445684102, guid: 3ff74e2768250425f9696ab414e06a9e, type: 3}
+  _panelPrefabs:
+    _prefabsList:
+    - Key: 0
+      Prefab:
+        m_AssetGUID: 82a1a6f5a593d48e594f7ba871a5d080
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - Key: 1
+      Prefab:
+        m_AssetGUID: 60bf01f9fde034bf9b6b81fc1c8bf9b9
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - Key: 2
+      Prefab:
+        m_AssetGUID: 08acc745d1f0444b19237b1950c92516
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - Key: 4
+      Prefab:
+        m_AssetGUID: cf899b9cafdd44400a1097711fa50868
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - Key: 3
+      Prefab:
+        m_AssetGUID: fdd3a17da92b945dd8a1775d09bea751
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - Key: 5
+      Prefab:
+        m_AssetGUID: 9d6a35dc685e5430abf0eb0513abd40e
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - Key: 6
+      Prefab:
+        m_AssetGUID: 63e9536f991574223834b46d66e434e4
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+  _menuTransformAnimationInDuration: 0.3
+  _menuTransformAnimationOutDuration: 0.3
+  Colors:
+    Plain: {fileID: 11400000, guid: 6202e91b4041c43399b16b6bc075fa7e, type: 2}
+    Soft: {fileID: 11400000, guid: 6a5a34ad0661544a496837d29909e6aa, type: 2}
+    Solid: {fileID: 11400000, guid: d9487e3b86b7c4bf18ca509599df3d15, type: 2}
+    Clear: {fileID: 11400000, guid: 36e620e99a97d4131ba7c0a7eedd0c55, type: 2}
+  _buttonPrefab: {fileID: 753694868033511574, guid: a75be8839852d4c6eb7f5710cff569c5, type: 3}
+  Icons: {fileID: 11400000, guid: 8614a8adb4f8d4a17b8e8e3f7869c3f7, type: 2}

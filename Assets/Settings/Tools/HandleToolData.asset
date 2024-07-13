@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 950244ec682ab4bca9a12d86c92358e2, type: 3}
+  m_Name: HandleToolData
+  m_EditorClassIdentifier: 
+  AxisRotations:
+  - {x: 0, y: 90, z: 90}
+  - {x: -90, y: -90, z: 0}
+  - {x: 0, y: 0, z: 0}
+  PressedMaterial: {fileID: 2100000, guid: 1fd5fd7208cd34356a753cce98944e2a, type: 2}
+  DefaultMaterials:
+  - {fileID: 2100000, guid: d270c57ed9d3f47da9a5f502ff2e17f4, type: 2}
+  - {fileID: 2100000, guid: 33cfce06e8b844f3b8c866bde1eab929, type: 2}
+  - {fileID: 2100000, guid: bfff8b201789a42ee91eac15bc0c3563, type: 2}
+  HoveredMaterials:
+  - {fileID: 2100000, guid: b234bf482bbbd414ca6f4e9ee8904cf3, type: 2}
+  - {fileID: 2100000, guid: 1ddb0fad2b2294e788407bf7a5a72b23, type: 2}
+  - {fileID: 2100000, guid: 8c9c010d744564f2789883286b3413d1, type: 2}

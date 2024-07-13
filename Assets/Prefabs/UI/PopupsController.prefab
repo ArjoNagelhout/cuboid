@@ -1,0 +1,179 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2828578098591376395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7671111684506043396}
+  - component: {fileID: 6962921528974555864}
+  - component: {fileID: 1737998695324289918}
+  - component: {fileID: 7346199235882583569}
+  m_Layer: 5
+  m_Name: Canvas_WorldSpace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7671111684506043396
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2828578098591376395}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.0006, y: 0.0006, z: 0.0006}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 232311049349838888}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &6962921528974555864
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2828578098591376395}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 483974915
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &1737998695324289918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2828578098591376395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19499c2135a034e28bbb52d90c31e1ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ignoreReversedGraphics: 0
+  _checkFor3DOcclusion: 0
+  _blockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  _raycastTriggerInteraction: 1
+--- !u!114 &7346199235882583569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2828578098591376395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b642f569bcf50460485486f5f7eb3ce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minimumStabilizationDistance: 0.1
+  _stabilizationRadius: 0.05
+  _distanceFromCamera: 0.75
+  _smoothToLerpTime: 0.1
+--- !u!1 &6067574070952037308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 232311049349838888}
+  - component: {fileID: -5303502864124020498}
+  - component: {fileID: 5614600625022243255}
+  m_Layer: 0
+  m_Name: PopupsController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &232311049349838888
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6067574070952037308}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7671111684506043396}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-5303502864124020498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6067574070952037308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb7f9e150a0c4124a9eff38c4aa21d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _popupUnderlayColor: {r: 0, g: 0.22745098, b: 0.5019608, a: 0.3882353}
+  _popupFlashDuration: 0.1
+  _popupFlashScale: 1.05
+  _popupEnterStartScale: 0.95
+  _popupEnterDuration: 0.2
+  _popupEnterZOffset: 20
+  _popupExitDuration: 0.2
+  _popupExitScale: {x: 0.5, y: 0, z: 1}
+  _contextMenuPrefab: {fileID: 2660269748913418423, guid: 03e397bea98304f109a7bddd4f204b41, type: 3}
+  _dialogBoxPrefab: {fileID: 2660269748913418423, guid: 6ebb06e7446ea4a27a4899faf50892cc, type: 3}
+  _inputTextPrefab: {fileID: 2660269748913418423, guid: 3e5aec65e79624e70b2372c22c23d88e, type: 3}
+  TooltipPopupPrefab: {fileID: 2660269748913418423, guid: a1622d1fe912f4f53974e3a85fb498d1, type: 3}
+  FullKeyboardPrefab: {fileID: 3452485981750409449, guid: fca5a23f5a7354365aca4e9b0cb8bc40, type: 3}
+  NumericKeyboardPopupPrefab: {fileID: 1167133071782844397, guid: 766284867a11944ae93d05231251f2c0, type: 3}
+  _popupUnderlayPrefab: {fileID: 7779575617826258040, guid: 46c1fb27b768944c5b7a0157f2f182a7, type: 3}
+  _zDistanceBetweenPopups: 20
+  _zOffsetPopups: 40
+  _worldSpacePopupTransform: {fileID: 7671111684506043396}
+  _floatInFrontOfHeadset: {fileID: 7346199235882583569}
+--- !u!114 &5614600625022243255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6067574070952037308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ca745d2dda6420c8724606e382bb60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _notificationPrefab: {fileID: 2660269748913418423, guid: 71bb5ba282b7c4e30a552ca61a4ce11f, type: 3}
+  _notificationEnterScale: 0.3
+  _notificationExitScale: 0
+  _notificationEnterDuration: 0.2
+  _notificationExitDuration: 0.2
+  _zOffsetPerNotification: -20

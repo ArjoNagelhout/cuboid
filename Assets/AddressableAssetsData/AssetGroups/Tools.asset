@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Tools
+  m_EditorClassIdentifier: 
+  m_GroupName: Tools
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 07a18c08b4fa94079b0950b884af2143
+  m_SerializeEntries:
+  - m_GUID: 9e7cd85753d7e4293a271aff0e7db02c
+    m_Address: SelectTool
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 24fb8f7f92cb74e2bb5a79c28deda512
+    m_Address: DrawShapeTool
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d0ae0737f492849e0b1e987c436ce2fc
+    m_Address: TranslateTool
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3f6b23315f4574ddda164a5a74f0841d
+    m_Address: RotateTool
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5a4b3eabe6bc94c98ab29ef42ee45767
+    m_Address: ScaleTool
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cab92721aac894310a67172f88cc18db
+    m_Address: SelectionBoundsTool
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9df6df8ef906e43faab37343ee2cecaf
+    m_Address: TextTool
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 25d4080cf2e164236b2d150167826c6f, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 4e20a020312f4416dbbfb2e662956249, type: 2}
+    - {fileID: 11400000, guid: 74ee2edcf546e42b7bfbf214344a39b7, type: 2}

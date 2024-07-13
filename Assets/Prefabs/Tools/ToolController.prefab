@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3735384217560007205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3735384217560007206}
+  - component: {fileID: 3735384217560007207}
+  m_Layer: 0
+  m_Name: ToolController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3735384217560007206
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3735384217560007205}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3735384217560007207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3735384217560007205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafad3afb803b4cc3a4da63e873713c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _toolPrefabs:
+    _prefabsList:
+    - Key: 0
+      Prefab:
+        m_AssetGUID: 9e7cd85753d7e4293a271aff0e7db02c
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - Key: 1
+      Prefab:
+        m_AssetGUID: d0ae0737f492849e0b1e987c436ce2fc
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - Key: 2
+      Prefab:
+        m_AssetGUID: 3f6b23315f4574ddda164a5a74f0841d
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - Key: 3
+      Prefab:
+        m_AssetGUID: 5a4b3eabe6bc94c98ab29ef42ee45767
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - Key: 4
+      Prefab:
+        m_AssetGUID: cab92721aac894310a67172f88cc18db
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - Key: 5
+      Prefab:
+        m_AssetGUID: 24fb8f7f92cb74e2bb5a79c28deda512
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - Key: 6
+      Prefab:
+        m_AssetGUID: 9df6df8ef906e43faab37343ee2cecaf
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+  ToolsData:
+    _keyValuePairsList:
+    - Key: 0
+      Value:
+        Name: Select Tool
+        Icon: {fileID: 21300000, guid: 35c78ca4beb6745049b758327b7db581, type: 3}
+    - Key: 1
+      Value:
+        Name: Translate Tool
+        Icon: {fileID: 21300000, guid: 2462bb26eefb3493f8ee45903c87d0ad, type: 3}
+    - Key: 2
+      Value:
+        Name: Rotate Tool
+        Icon: {fileID: 21300000, guid: cb4667c1a822544469639ca7b3cf347d, type: 3}
+    - Key: 3
+      Value:
+        Name: Scale Tool
+        Icon: {fileID: 21300000, guid: 15480b24fad534bf698b6f86182ab293, type: 3}
+    - Key: 4
+      Value:
+        Name: Selection Bounds Tool
+        Icon: {fileID: 21300000, guid: faef43aabc6a44ef98c63e2307a01fbf, type: 3}
+    - Key: 5
+      Value:
+        Name: Draw Shape Tool
+        Icon: {fileID: 21300000, guid: f7ec24593f2424ef0a610fa138daf1f6, type: 3}
+    - Key: 6
+      Value:
+        Name: Text Tool
+        Icon: {fileID: 21300000, guid: f6bb0ddf864e44adcae97a91b797891a, type: 3}

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453dec08a9ff343029ed1054e81cf245, type: 3}
+  m_Name: ButtonColorsSolid
+  m_EditorClassIdentifier: 
+  Disabled: {r: 0.6784314, g: 0.85882354, b: 1, a: 1}
+  DisabledText: {r: 1, g: 1, b: 1, a: 1}
+  Normal: {r: 0.03529412, g: 0.41960785, b: 0.87058824, a: 1}
+  Hover: {r: 0.019607844, g: 0.3019608, b: 0.654902, a: 1}
+  Pressed: {r: 0.011764706, g: 0.21176471, b: 0.49019608, a: 1}
+  Text: {r: 1, g: 1, b: 1, a: 1}
+  Active: {r: 0.03529412, g: 0.41960785, b: 0.87058824, a: 1}
+  ActiveHover: {r: 0.019607844, g: 0.3019608, b: 0.654902, a: 1}
+  ActivePressed: {r: 0.011764706, g: 0.21176471, b: 0.49019608, a: 1}
+  ActiveText: {r: 1, g: 1, b: 1, a: 1}

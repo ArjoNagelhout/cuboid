@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: MenuViews
+  m_EditorClassIdentifier: 
+  m_GroupName: MenuViews
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 21811f7434ec64ec889e9d02250a21a6
+  m_SerializeEntries:
+  - m_GUID: 08acc745d1f0444b19237b1950c92516
+    m_Address: SettingsView
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 60bf01f9fde034bf9b6b81fc1c8bf9b9
+    m_Address: DocumentsView
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 82a1a6f5a593d48e594f7ba871a5d080
+    m_Address: AssetsView
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cf899b9cafdd44400a1097711fa50868
+    m_Address: ToolsView
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fdd3a17da92b945dd8a1775d09bea751
+    m_Address: PropertiesView
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9d6a35dc685e5430abf0eb0513abd40e
+    m_Address: ColorsView
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 63e9536f991574223834b46d66e434e4
+    m_Address: CreditsView
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 25d4080cf2e164236b2d150167826c6f, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f9792b7a8f00b47b3b377348667e1472, type: 2}
+    - {fileID: 11400000, guid: b894889439715431da94fc76791deee7, type: 2}
