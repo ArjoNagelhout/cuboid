@@ -71,7 +71,7 @@ All code is located in the following directories:
 ```
 
 ### `📁 Commands`
-For storing the editing history to enable fully undoing and redoing all edits made by the user.
+For storing the editing history to enable fully undoing and redoing all edits made by the user. This employs the command pattern. Commands can be nested and/or combined to create compound commands, e.g. for selecting and moving objects on click and drag. 
 
 - [`AddCommand.cs`](app/Assets/Scripts/Runtime/Commands/AddCommand.cs)
 - [`RemoveCommand.cs`](app/Assets/Scripts/Runtime/Commands/RemoveCommand.cs)
@@ -82,7 +82,9 @@ For storing the editing history to enable fully undoing and redoing all edits ma
 
 ### `📁 Document`
 
-Serializable and editable data model of the 3D scene.
+Serializable and editable data model of a 3D scene. A `RealityDocument` is the data model that gets saved and loaded to and from disk. A `RealityDocument` contains a `RealityScene`, which in its turn contains a set of `RealityObject`s. These `RealityObject`s can have different types, such as a 3D asset, or a primitive shape. 
+
+Assets are not stored inside the `RealityDocument` but stored as a reference to a `RealityAssetCollection`, which wraps a Unity AssetBundle. These `RealityAssetCollection`s are created with [`com.cuboid.unity-plugin`](https://github.com/ShapeReality/com.cuboid.unity-plugin). 
 
 - `📁 RealityAsset`
     - [`RealityAsset.cs`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAsset.cs) A 3D model
