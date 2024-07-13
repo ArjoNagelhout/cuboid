@@ -92,13 +92,13 @@ Serializable and editable data model of a 3D scene. A `RealityDocument` is the d
     - [`RealityAssetsController.cs`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAssetsController.cs) Logic for loading 3D models from disk
 - `📁 RealityShape` A primitive shape with editable properties
     - [`RoundedCuboidRenderer.cs`](app/Assets/Scripts/Runtime/Document/RealityShape/RoundedCuboidRenderer.cs) Renders a cuboid
-- ClipboardController
-- PropertiesController `Logic for rendering reflected property fields for objects that are selected in the scene`
-- RealityDocument `Main entrypoint for the data the user can create and store (contains a scene of objects)`
-- RealityDocumentController `Storing and loading a RealityDocument from disk`
-- RealityObject `A selectable object inside the RealityDocument`
-- RealitySceneController `Rendering a scene and instantiating RealityObjects when loaded`
-- Selection `A simple hashset`
+- [`ClipboardController.cs`](app/Assets/Scripts/Runtime/Document/ClipboardController.cs) Stores cut or copied objects
+- [`PropertiesController.cs`](app/Assets/Scripts/Runtime/Document/PropertiesController.cs) Logic for rendering reflected property fields for objects that are selected in the scene
+- [`RealityDocument.cs`](app/Assets/Scripts/Runtime/Document/RealityDocument.cs) See above
+- [`RealityDocumentController.cs`](app/Assets/Scripts/Runtime/Document/RealityDocumentController.cs) Storing and loading a RealityDocument from disk
+- [`RealityObject.cs`](app/Assets/Scripts/Runtime/Document/RealityObject.cs) A selectable object inside the RealityDocument
+- [`RealitySceneController`](app/Assets/Scripts/Runtime/Document/RealitySceneController.cs) Rendering a scene and instantiating RealityObjects when loaded
+- [`Selection`](app/Assets/Scripts/Runtime/Document/Selection.cs) `A simple hashset of objects`
 - SelectionController `Selection, transform updates and bounds of selected objects`
 - ThumbnailProvider `Cache layer to avoid retrieving thumbnails from the AssetBundle each time`
 - TransformData
