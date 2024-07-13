@@ -70,18 +70,18 @@ High level overview of the codebase.
                 - RealityAssetCollection `A collection of 3D models`
                 - RealityAssetsController `Logic for loading 3D models from disk`
             - 📁 RealityShape `A primitive shape with editable properties`
-                - RoundedCuboidRenderer `The only shape currently implemented: renders a cuboid with rounded corners`
-            - ClipboardController `Storing cut or copied objects for pasting into the scene`
-            - PropertiesController `Logic for rendering property fields for objects that are selected in the scene`
+                - RoundedCuboidRenderer `renders a cuboid`
+            - ClipboardController
+            - PropertiesController `Logic for rendering reflected property fields for objects that are selected in the scene`
             - RealityColor `Color stored either as RGB or HSV (so that no data is lost while editing)`
-            - RealityDocument `Main entrypoint for the data the user can create and store (a list of scenes with each scene containing a set of objects)`
-            - RealityDocumentController `Responsible for storing and loading a RealityDocument to and from disk`
-            - RealityDocumentFileInformation `Information retrieved about the file that is not stored inside the RealityDocument`
+            - RealityDocument `Main entrypoint for the data the user can create and store`
+            - RealityDocumentController `storing and loading a RealityDocument from disk`
+            - RealityDocumentFileInformation
             - RealityObject `a selectable object inside the RealityDocument`
-            - RealitySceneController `responsible for rendering a scene and instantiating RealityObjects when loaded`
+            - RealitySceneController `rendering a scene and instantiating RealityObjects when loaded`
             - Selection `a simple hashset`
-            - SelectionController `manages selection, transform updates and bounds of selected objects`
-            - ThumbnailProvider `has a cache layer so that thumbnails don't have to be retrieved each time from the AssetBundle (that would be slow)`
+            - SelectionController `selection, transform updates and bounds of selected objects`
+            - ThumbnailProvider `cache layer to avoid retrieving thumbnails from the AssetBundle`
             - TransformData
         - **📁 Input**
         - **📁 Rendering**
