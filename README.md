@@ -56,23 +56,24 @@ All code is located in the following directories:
 
 ```
 📁 app/
-└── 📁 Scripts/
-    ├── 📁 Editor/
-    └── 📁 Runtime/
-        ├── 📁 Commands/
-        ├── 📁 Document/
-        ├── 📁 Input/
-        ├── 📁 Rendering/
-        ├── 📁 SpatialUI/
-        ├── 📁 Tools/
-        ├── 📁 UI/
-        └── 📁 Utils/
+└── 📁 Assets/
+    └── 📁 Scripts/
+        ├── 📁 Editor/
+        └── 📁 Runtime/
+            ├── 📁 Commands/
+            ├── 📁 Document/
+            ├── 📁 Input/
+            ├── 📁 Rendering/
+            ├── 📁 SpatialUI/
+            ├── 📁 Tools/
+            ├── 📁 UI/
+            └── 📁 Utils/
 ```
 
 ### `Commands`
 For storing the editing history to enable fully undoing and redoing all edits made by the user.
 
-- `AddCommand.cs`
+- [`AddCommand.cs`](app/Assets/Scripts/Runtime/Commands/AddCommand.cs)
 - `RemoveCommand.cs`
 - `SelectCommand.cs`
 - `SetPropertyCommand.cs`
