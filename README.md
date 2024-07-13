@@ -55,6 +55,7 @@ Only the `VR` subdirectory of the package needs to be installed to the `Oculus` 
 All code is located in the following directories:
 
 ```
+📁 app/
 └── 📁 Scripts/
     ├── 📁 Editor/
     └── 📁 Runtime/
