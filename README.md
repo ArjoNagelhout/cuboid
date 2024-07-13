@@ -78,6 +78,11 @@ High level overview of the codebase.
             - RealityDocumentController `Responsible for storing and loading a RealityDocument to and from disk`
             - RealityDocumentFileInformation `Information retrieved about the file that is not stored inside the RealityDocument`
             - RealityObject `a selectable object inside the RealityDocument`
+            - RealitySceneController `responsible for rendering a scene and instantiating RealityObjects when loaded`
+            - Selection `a simple hashset`
+            - SelectionController `manages selection, transform updates and bounds of selected objects`
+            - ThumbnailProvider `has a cache layer so that thumbnails don't have to be retrieved each time from the AssetBundle (that would be slow)`
+            - TransformData
         - **📁 Input**
         - **📁 Rendering**
         - **📁 SpatialUI**
