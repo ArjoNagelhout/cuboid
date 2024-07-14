@@ -181,7 +181,7 @@ Calculating the new position of the *handle* on moving the *spatial pointer* is 
 ### `📁 Tools`
 
 - [`ToolController.cs`](app/Assets/Scripts/Runtime/Tools/ToolController.cs) Instantiates the tool prefab based on the selected tool
-- [`ToolSwitcher.cs`](app/Assets/Scripts/Runtime/Tools/ToolSwitcher.cs) A quick switcher with the joystick between the most commonly used tools. 
+- [`ToolSwitcher.cs`](app/Assets/Scripts/Runtime/Tools/ToolSwitcher.cs) A quick switcher that enables the user to switch with the joystick between the most commonly used tools. 
 - [`ModifiersController.cs`](app/Assets/Scripts/Runtime/Tools/ModifiersController.cs) Listens to buttons on the non-dominant hand to activate the `Shift` or `Option` modifiers
 - [`OutsideUIBehaviour.cs`](app/Assets/Scripts/Runtime/Tools/OutsideUIBehaviour.cs) Registers listening to events (e.g. when the user clicks or drags) for outside the UI *and* outside spatial UI. 
 
