@@ -1,8 +1,8 @@
-## Discontinuation notice
+## ⚠️ Discontinuation notice
 
 Due to Unity's pricing changes, I made the decision to discontinue the development of this app, as rewriting it using a different 3D graphics framework or game engine would be too costly and time intensive. 
 
-Some of the code and design decisions inside this repository might help someone develop something similar, which is why I have decided to publish the source code under the [MIT license](LICENSE.md). 
+Some of the code and design decisions inside this repository might help someone develop something similar, which is why I have decided to publish the source code under the [MIT license](LICENSE.md). Note that the project depends on one paid asset, `Shapes` by Freya Holmér. Luckily, this dependency could be replaced fairly trivially by something else. 
 
 # Cuboid
 
