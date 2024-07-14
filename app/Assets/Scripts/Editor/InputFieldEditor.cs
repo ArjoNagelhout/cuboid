@@ -1,4 +1,7 @@
-﻿// Copyright (c) 2023 Arjo Nagelhout
+﻿//
+// Cuboid (http://github.com/arjonagelhout/cuboid)
+// Copyright (c) 2023 Arjo Nagelhout
+//
 
 using UnityEngine;
 using UnityEngine.UI;

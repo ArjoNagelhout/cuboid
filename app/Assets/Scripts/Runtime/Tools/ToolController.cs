@@ -1,4 +1,7 @@
+//
+// Cuboid (http://github.com/arjonagelhout/cuboid)
 // Copyright (c) 2023 Arjo Nagelhout
+//
 
 using System;
 using System.Reflection;

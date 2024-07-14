@@ -1,4 +1,7 @@
+//
+// Cuboid (http://github.com/arjonagelhout/cuboid)
 // Copyright (c) 2023 Arjo Nagelhout
+//
 
 //#define TMP_DEBUG_MODE
 
