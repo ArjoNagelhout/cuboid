@@ -113,22 +113,22 @@ Serializable and editable data model of a 3D scene. A `RealityDocument` is the d
 
 #### Data model
 
-- [`RealityDocument.cs`](app/Assets/Scripts/Runtime/Document/RealityDocument.cs) Main data model
-- [`TransformData.cs`](app/Assets/Scripts/Runtime/Document/TransformData.cs)
-- [`RealityObject.cs`](app/Assets/Scripts/Runtime/Document/RealityObject.cs) A selectable object inside the RealityDocument
+- [`RealityDocument.cs`](app/Assets/Scripts/Runtime/Document/RealityDocument.cs) Main data model of the application
+- [`TransformData.cs`](app/Assets/Scripts/Runtime/Document/TransformData.cs) 3D TRS Transform of a `RealityObject`
+- [`RealityObject.cs`](app/Assets/Scripts/Runtime/Document/RealityObject.cs) A selectable object inside the `RealityDocument`
 - `📁 RealityAsset`
-    - [`RealityAsset.cs`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAsset.cs) A 3D model
-    - [`RealityAssetCollection.cs`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAssetCollection.cs) A collection of 3D models
+    - [`RealityAsset.cs`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAsset.cs) A fully textured, animated and shaded 3D model, stored inside a `RealityAssetCollection`
+    - [`RealityAssetCollection.cs`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAssetCollection.cs) A collection of 3D models stored inside a Unity AssetBundle on disk
 - `📁 RealityShape` A primitive shape with editable properties
     - [`RoundedCuboidRenderer.cs`](app/Assets/Scripts/Runtime/Document/RealityShape/RoundedCuboidRenderer.cs) Renders a cuboid
-- [`Selection.cs`](app/Assets/Scripts/Runtime/Document/Selection.cs) A simple hashset of objects
+- [`Selection.cs`](app/Assets/Scripts/Runtime/Document/Selection.cs) A simple hashset of objects that represents the current selection
 
 #### Controllers
 
-- [`📁 RealityAsset/RealityAssetsController.cs`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAssetsController.cs) Logic for loading 3D models from disk
-- [`ClipboardController.cs`](app/Assets/Scripts/Runtime/Document/ClipboardController.cs) Stores cut or copied objects
-- [`PropertiesController.cs`](app/Assets/Scripts/Runtime/Document/PropertiesController.cs) Logic for rendering reflected property fields in the UI for objects that are selected in the scene
-- [`RealityDocumentController.cs`](app/Assets/Scripts/Runtime/Document/RealityDocumentController.cs) Storing and loading a RealityDocument from disk
+- [`📁 RealityAsset/RealityAssetsController.cs`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAssetsController.cs) Loading 3D models from disk
+- [`ClipboardController.cs`](app/Assets/Scripts/Runtime/Document/ClipboardController.cs) Storing cut or copied objects
+- [`PropertiesController.cs`](app/Assets/Scripts/Runtime/Document/PropertiesController.cs) Rendering reflected property fields in the UI for objects that are selected in the scene
+- [`RealityDocumentController.cs`](app/Assets/Scripts/Runtime/Document/RealityDocumentController.cs) Storing and loading a `RealityDocument` from disk
 - [`RealitySceneController`](app/Assets/Scripts/Runtime/Document/RealitySceneController.cs) Rendering a scene and instantiating RealityObjects when loaded
 - [`SelectionController.cs`](app/Assets/Scripts/Runtime/Document/SelectionController.cs) Selection, transform updates and bounds of selected objects
 - [`ThumbnailProvider.cs`](app/Assets/Scripts/Runtime/Document/ThumbnailProvider.cs) Cache layer to avoid retrieving thumbnails from the AssetBundle each time
@@ -137,11 +137,11 @@ Serializable and editable data model of a 3D scene. A `RealityDocument` is the d
 
 Handling of spatial input events from XR controllers. Part of this is adopted and modified from the XR Interaction Toolkit, as the XR Interaction Toolkit proved insufficient for achieving the exact interactions expected in a design application. 
 
-There are three different types of interactables in the scene. They are interacted with in the following order. UI is always on top of SpatialUI, which on its turn is always above the scene.
+There are three different types of interactables in the scene. They are interacted with in the following order: UI is always on top of SpatialUI, which on its turn is always above the scene.
 
-1. **`UI`** (this is 2D UI such as buttons and a colorpicker)
-2. **`SpatialUI`** (3D handles and UI elements that should be moved in 3D space to perform the action, such as a *translate along axis* handle
-3. **`OutsideUI`** (anywhere outside UI or SpatialUI, can be digital objects or the physical world)
+1. **`UI`** 2D UI such as buttons and a colorpicker
+2. **`SpatialUI`** 3D handles and UI elements that should be moved in 3D space to perform the action, e.g. a *translate along axis* handle
+3. **`OutsideUI`** Anywhere outside UI or SpatialUI, can be digital objects or the physical world
 
 - `📁 Core`
     - [`Handedness.cs`](app/Assets/Scripts/Runtime/Input/Core/Handedness.cs) Handle left- and right-handedness
@@ -166,9 +166,6 @@ Not much to see here, as Unity handles all rendering.
 
 ### `📁 SpatialUI`
 
-- [`SpatialContextMenu.cs`](app/Assets/Scripts/Runtime/SpatialUI/SpatialContextMenu.cs) A simple menu that moves in front of the view of the user
-- [`Visuals.cs`](app/Assets/Scripts/Runtime/SpatialUI/Visuals.cs) Show origin and grid in scene
-
 #### Handles
 
 The handles defined in SpatialUI purely contain data and implement the interfaces defined in [`SpatialPointerEvents.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialPointerEvents.cs) in `📁 Input`. 
@@ -179,6 +176,11 @@ Calculating the new position of the *handle* on moving the *spatial pointer* is 
 - [`AxisHandle.cs`](app/Assets/Scripts/Runtime/SpatialUI/AxisHandle.cs) Contains additional data for which axis (x, y or z) this handle would edit
 - [`TranslateHandle.cs`](app/Assets/Scripts/Runtime/SpatialUI/TranslateHandle.cs) Contains additional data for whether the handle is a plane or axis handle
 - [`SelectionBoundsHandle.cs`](app/Assets/Scripts/Runtime/SpatialUI/SelectionBoundsHandle.cs) Handle for the corner, edge or face of a selection bounds
+
+#### Miscellaneous
+
+- [`SpatialContextMenu.cs`](app/Assets/Scripts/Runtime/SpatialUI/SpatialContextMenu.cs) A simple menu that moves in front of the view of the user
+- [`Visuals.cs`](app/Assets/Scripts/Runtime/SpatialUI/Visuals.cs) Show origin and grid in scene
 
 ### `📁 Tools`
 
