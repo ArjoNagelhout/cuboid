@@ -270,15 +270,15 @@ Another unique property of properties (he), is that they can update the document
 
 In addition, it works with multiple objects selected at the same time. 
 
-- [`Property.cs`](app/Assets/Scripts/Runtime/UI/Properties/Property.cs) Base class
-- [`BooleanProperty.cs`](app/Assets/Scripts/Runtime/UI/Properties/BooleanProperty.cs)
+- [`Property.cs`](app/Assets/Scripts/Runtime/UI/Properties/Property.cs) Base class for a property
+- [`FloatProperty.cs`](app/Assets/Scripts/Runtime/UI/Properties/FloatProperty.cs) Contains a `Slider` and a `ValueField`
+- [`IntProperty.cs`](app/Assets/Scripts/Runtime/UI/Properties/IntProperty.cs) Contains a `Slider` and a `ValueField`
+- [`StringProperty.cs`](app/Assets/Scripts/Runtime/UI/Properties/StringProperty.cs) Contains a `InputField`
+- [`BooleanProperty.cs`](app/Assets/Scripts/Runtime/UI/Properties/BooleanProperty.cs) Contains a `Toggle`
 - [`ColorProperty.cs`](app/Assets/Scripts/Runtime/UI/Properties/ColorProperty.cs) Creates a `ColorPicker` popup on clicking on the property
-- [`EnumProperty.cs`](app/Assets/Scripts/Runtime/UI/Properties/EnumProperty.cs) creates a `PopupButton` on clicking on the property
-- [`FloatProperty.cs`](app/Assets/Scripts/Runtime/UI/Properties/FloatProperty.cs) contains a slider and a value field
-- [`IntProperty.cs`](app/Assets/Scripts/Runtime/UI/Properties/IntProperty.cs)
-- [`StringProperty.cs`](app/Assets/Scripts/Runtime/UI/Properties/StringProperty.cs)
-- [`Vector2Property.cs`](app/Assets/Scripts/Runtime/UI/Properties/Vector2Property.cs) contains a `Vector2Field`
-- [`Vector3Property.cs`](app/Assets/Scripts/Runtime/UI/Properties/Vector3Property.cs) contains a `Vector3Field`
+- [`EnumProperty.cs`](app/Assets/Scripts/Runtime/UI/Properties/EnumProperty.cs) Contains a `PopupButton`
+- [`Vector2Property.cs`](app/Assets/Scripts/Runtime/UI/Properties/Vector2Property.cs) Contains a `Vector2Field`
+- [`Vector3Property.cs`](app/Assets/Scripts/Runtime/UI/Properties/Vector3Property.cs) Contains a `Vector3Field`
 
 #### `📁 Views`
 
