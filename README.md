@@ -14,7 +14,7 @@ Cuboid allows you to design for the real world, in the real world. Import high q
 
 ## Key Features
 
-- Import any Unity Prefab or 3D model into the application via our Unity Plugin (custom MonoBehaviour scripts excluded)
+- Import any Unity Prefab or 3D model into the application via the Unity Plugin (custom MonoBehaviour scripts excluded)
 - Place 3D objects in your environment on world-scale augmented reality using Passthrough.
 - Built-in asset library.
 - Cuboid is a local, standalone application for Meta Quest 2 and Meta Quest Pro. It does not require an internet connection or creating an account.
