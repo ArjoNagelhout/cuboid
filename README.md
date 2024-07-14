@@ -87,14 +87,10 @@ All code is located in the following directories:
 
 Top level scripts inside `📁 Runtime`:
 
-- [`App.cs`](app/Assets/Scripts/Runtime/App.cs) Main class for certain properties that should be global and bindable
-- [`ApplicationData.cs`](app/Assets/Scripts/Runtime/ApplicationData.cs) Bundled metadata such as build number on build
+
 - [`Binding.cs`](app/Assets/Scripts/Runtime/Binding.cs) Utility class for binding a value to a UI element to keep the UI and data model in sync. 
 - [`CacheController.cs`](app/Assets/Scripts/Runtime/CacheController.cs) Enables the user to clear the cache and to inspect its size
 - [`ColorsController.cs`](app/Assets/Scripts/Runtime/ColorsController.cs) Global controller for changing the color of all selected objects
-- [`Constants.cs`](app/Assets/Scripts/Runtime/Constants.cs)
-- [`Layers.cs`](app/Assets/Scripts/Runtime/Layers.cs) Layers that exist in the project: 1) Default, 2) UI, 3) SpatialUI, 4) Controllers and 5) Selected
-- [`UserData.cs`](app/Assets/Scripts/Runtime/UserData.cs) Alternative to Unity's built in UserSettings that serializes to Json. 
 
 ### `📁 Commands`
 For storing the editing history to enable fully undoing and redoing all edits made by the user. This employs the command pattern. Commands can be nested and/or combined to create compound commands, e.g. for selecting and moving objects on click and drag. 
