@@ -233,7 +233,7 @@ Contains custom UI components that are data driven and better than Unity UI's bu
 
 ##### Containers
 
-- [`NavigationStack.cs`](app/Assets/Scripts/Runtime/UI/Core/NavigationStack.cs) A stack of views that can be 
+- [`NavigationStack.cs`](app/Assets/Scripts/Runtime/UI/Core/NavigationStack.cs) A stack of views similar to UIKit's NavigationStack. 
 - [`ScrollView.cs`](app/Assets/Scripts/Runtime/UI/Core/ScrollView.cs)
 - [`ScrollViewPool.cs`](app/Assets/Scripts/Runtime/UI/Core/ScrollViewPool.cs)
 - [`ScrollViewScaler.cs`](app/Assets/Scripts/Runtime/UI/Core/ScrollViewScaler.cs)
