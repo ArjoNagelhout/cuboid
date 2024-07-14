@@ -2,7 +2,7 @@
 
 Due to Unity's pricing changes, I made the decision to discontinue the development of this app, as I am no longer comfortable with spending significant time building on top of a foundation that could be pulled from under you at any point in time. 
 
-Some of the code and design decisions inside this repository might help someone develop something similar, which is why I have decided to publish the source code under the [MIT license](LICENSE.md). Note that the project depends on one paid asset, `Shapes` by Freya Holmér. Luckily, this dependency could be replaced fairly trivially by something else. 
+Some of the code and design decisions inside this repository might help someone develop something similar, which is why I have decided to publish the source code under the [MIT license](LICENSE.md). Note that the project depends on one paid asset, [Shapes by Freya Holmér](https://acegikmo.com/shapes/). Luckily, this dependency could be replaced fairly trivially by something else. 
 
 # Cuboid
 
@@ -12,16 +12,21 @@ Some of the code and design decisions inside this repository might help someone 
 
 Cuboid allows you to design for the real world, in the real world. Import high quality assets, and place and manipulate them at world-scale in your environment. Reimagine your living room, your house, or an entire city! 
 
+## Supported Devices
+
+- Meta Quest 2
+- Meta Quest Pro
+
 ## Key Features
 
-- Import any Unity Prefab or 3D model into the application via the Unity Plugin (custom MonoBehaviour scripts excluded)
+- Import any Unity Prefab or 3D model into the application via [com.cuboid.unity-plugin](https://github.com/ShapeReality/com.cuboid.unity-plugin) (custom MonoBehaviour scripts excluded)
 - Place 3D objects in your environment on world-scale augmented reality using Passthrough.
 - Built-in asset library.
-- Cuboid is a local, standalone application for Meta Quest 2 and Meta Quest Pro. It does not require an internet connection or creating an account.
+- Cuboid is a local, standalone application. It does not require an internet connection or creating an account.
 - Translate, rotate and scale objects using gizmos and intuitive scale bounds handles, from a distance!
 - Select, cut, copy, paste, duplicate and delete objects via a context menu.
 - Full undo / redo support.
-- Save and load scenes to and from a local .json file, name files.
+- Save and load scenes to and from a local .json file. 
 - Draw primitive shapes and change corner radius or their color via a full RGB / HSV color picker.
 
 ## Dependencies
