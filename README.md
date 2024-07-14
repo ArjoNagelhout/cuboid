@@ -118,7 +118,7 @@ Serializable and editable data model of a 3D scene. A `RealityDocument` is the d
 - [`RealityObject.cs`](app/Assets/Scripts/Runtime/Document/RealityObject.cs) A selectable object inside the RealityDocument
 - `📁 RealityAsset`
     - [`RealityAsset.cs`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAsset.cs) A 3D model
-    - [`RealityAssetCollection`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAssetCollection.cs) A collection of 3D models`
+    - [`RealityAssetCollection.cs`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAssetCollection.cs) A collection of 3D models
 - `📁 RealityShape` A primitive shape with editable properties
     - [`RoundedCuboidRenderer.cs`](app/Assets/Scripts/Runtime/Document/RealityShape/RoundedCuboidRenderer.cs) Renders a cuboid
 - [`Selection.cs`](app/Assets/Scripts/Runtime/Document/Selection.cs) A simple hashset of objects
@@ -137,13 +137,19 @@ Serializable and editable data model of a 3D scene. A `RealityDocument` is the d
 
 Handling of spatial input events from XR controllers. Part of this is adopted and modified from the XR Interaction Toolkit, as the XR Interaction Toolkit proved insufficient for achieving the exact interactions expected in a design application. 
 
+There are three different types of interactables in the scene. They are interacted with in the following order. UI is always on top of SpatialUI, which on its turn is always above the scene.
+
+1. **`UI`** (this is 2D UI such as buttons and a colorpicker)
+2. **`SpatialUI`** (3D handles and UI elements that should be moved in 3D space to perform the action, such as a *translate along axis* handle
+3. **`OutsideUI`** (anywhere outside UI or SpatialUI, can be digital objects or the physical world)
+
 - `📁 Core`
     - [`Handedness.cs`](app/Assets/Scripts/Runtime/Input/Core/Handedness.cs) Handle left- and right-handedness
     - [`RayInteractor.cs`](app/Assets/Scripts/Runtime/Input/Core/RayInteractor.cs)
     - [`SpatialGraphicRaycaster.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialGraphicRaycaster.cs) Raycasting with UI
     - [`SpatialInputModule.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialInputModule.cs) Handling of input events that retains focus for either UI interactions or 3D scene interactions. Handles stabilization and smoothing of the spatial pointer
     - [`SpatialPhysicsRaycaster.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialPhysicsRaycaster.cs) Raycasting with 3D scene
-    - [`SpatialPointerConfiguration.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialPointerConfiguration.cs) Dictates how the spatial pointer should be moved by the user
+    - [`SpatialPointerConfiguration.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialPointerConfiguration.cs) Dictates how the spatial pointer should be moved when the user interacts with a specific Spatial UI element.
     - [`SpatialPointerEvents.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialPointerEvents.cs) Events that spatial UI can listen to to create interactable spatial UI
     - [`SpatialPointerReticle.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialPointerReticle.cs) Rendering of the spatial pointer
 - `📁 Keyboard` Custom VR keyboard implementation with numeric support
