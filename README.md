@@ -245,7 +245,7 @@ Contains custom UI components that are data driven and better than Unity UI's bu
 - [`Slider2D.cs`](app/Assets/Scripts/Runtime/UI/Core/Slider2D.cs) A data driven 2D slider (used by the color picker)
 - [`Toggle.cs`](app/Assets/Scripts/Runtime/UI/Core/Toggle.cs) A data driven toggle
 - [`InputField.cs`](app/Assets/Scripts/Runtime/UI/Core/InputField.cs) An input field, adapted from TextMeshPro as that one was broken with text selection and editing in VR. Instantiates the correct keyboard popup based on its value type (e.g. numeric or text). 
-- [`ValueField.cs`](app/Assets/Scripts/Runtime/UI/Core/ValueField.cs) Depends on InputField, binds to a binding that contains a float value. 
+- [`ValueField.cs`](app/Assets/Scripts/Runtime/UI/Core/ValueField.cs) Depends on `InputField`, binds to a binding that contains a float value. 
 - [`Vector2Field.cs`](app/Assets/Scripts/Runtime/UI/Core/Vector2Field.cs) Contains two `ValueField`s
 - [`Vector3Field.cs`](app/Assets/Scripts/Runtime/UI/Core/Vector3Field.cs) Contains three `ValueField`s
 
