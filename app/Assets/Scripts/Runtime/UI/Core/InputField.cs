@@ -1,3 +1,5 @@
+// Copyright (c) 2023 Arjo Nagelhout
+
 //#define TMP_DEBUG_MODE
 
 using System;

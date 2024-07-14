@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿// Copyright (c) 2023 Arjo Nagelhout
+
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
 using UnityEditor.UI;

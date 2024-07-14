@@ -1,3 +1,5 @@
+// Copyright (c) 2023 Arjo Nagelhout
+
 // Adapted from https://github.com/PimDeWitte/UnityMainThreadDispatcher
 // See https://github.com/PimDeWitte/UnityMainThreadDispatcher/blob/master/LICENSE for license
 

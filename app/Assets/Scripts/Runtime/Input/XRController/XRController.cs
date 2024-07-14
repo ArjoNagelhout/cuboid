@@ -1,3 +1,5 @@
+// Copyright (c) 2023 Arjo Nagelhout
+
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;

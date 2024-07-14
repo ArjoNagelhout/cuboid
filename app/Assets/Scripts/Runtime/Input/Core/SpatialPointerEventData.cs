@@ -1,9 +1,4 @@
-// 
-// SpatialPointerEventData.cs
-// Cuboid
-// 
-// Copyright 2023 ShapeReality
-// 
+// Copyright (c) 2023 Arjo Nagelhout
 
 using System;
 using System.Collections;
