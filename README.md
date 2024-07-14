@@ -54,7 +54,7 @@ The project depends on the [`Oculus Integration`](https://assetstore.unity.com/p
 
 Only the `VR` subdirectory of the package needs to be installed to the `Oculus` subdirectory. 
 
-*⚠️ Note that the Oculus Integration package has since been deprecated, please refer to Meta's guide for upgrading your project to the new packages.*
+*⚠️ Note that the Oculus Integration package has since been deprecated. Please refer to Meta's guide for upgrading your project to the new packages.*
 
 ## Codebase Architecture
 
@@ -121,16 +121,15 @@ Serializable and editable data model of a 3D scene. A `RealityDocument` is the d
 - [`RealityDocument.cs`](app/Assets/Scripts/Runtime/Document/RealityDocument.cs) Main data model of the application
 - [`TransformData.cs`](app/Assets/Scripts/Runtime/Document/TransformData.cs) 3D TRS Transform of a `RealityObject`
 - [`RealityObject.cs`](app/Assets/Scripts/Runtime/Document/RealityObject.cs) A selectable object inside the `RealityDocument`
-- `📁 RealityAsset`
-    - [`RealityAsset.cs`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAsset.cs) A fully textured, animated and shaded 3D model, stored inside a `RealityAssetCollection`
-    - [`RealityAssetCollection.cs`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAssetCollection.cs) A collection of 3D models stored inside a Unity AssetBundle on disk
-- `📁 RealityShape` A primitive shape with editable properties
-    - [`RoundedCuboidRenderer.cs`](app/Assets/Scripts/Runtime/Document/RealityShape/RoundedCuboidRenderer.cs) Renders a cuboid
-- [`Selection.cs`](app/Assets/Scripts/Runtime/Document/Selection.cs) A simple hashset of objects that represents the current selection
+- [`RealityAsset.cs`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAsset.cs) A fully textured, animated and shaded 3D model, stored inside a `RealityAssetCollection`
+- [`RealityAssetCollection.cs`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAssetCollection.cs) A collection of 3D models stored inside a Unity AssetBundle on disk
+- [`RealityShape.cs`](app/Assets/Scripts/Runtime/Document/RealityShape/RealityShape.cs) A primitive shape with editable properties
+- [`RoundedCuboidRenderer.cs`](app/Assets/Scripts/Runtime/Document/RealityShape/RoundedCuboidRenderer.cs) Renders a cuboid, used by `RealityShape` if the primitive type is `Cuboid`
+- [`Selection.cs`](app/Assets/Scripts/Runtime/Document/Selection.cs) A hashset of objects that represents the current selection
 
 #### Controllers
 
-- [`📁 RealityAsset/RealityAssetsController.cs`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAssetsController.cs) Loading 3D models from disk
+- [`RealityAssetsController.cs`](app/Assets/Scripts/Runtime/Document/RealityAsset/RealityAssetsController.cs) Loading 3D models from disk
 - [`ClipboardController.cs`](app/Assets/Scripts/Runtime/Document/ClipboardController.cs) Storing cut or copied objects
 - [`PropertiesController.cs`](app/Assets/Scripts/Runtime/Document/PropertiesController.cs) Rendering reflected property fields in the UI for objects that are selected in the scene
 - [`RealityDocumentController.cs`](app/Assets/Scripts/Runtime/Document/RealityDocumentController.cs) Storing and loading a `RealityDocument` from disk
@@ -148,18 +147,30 @@ There are three different types of interactables in the scene. They are interact
 2. **`SpatialUI`** 3D handles and UI elements that should be moved in 3D space to perform the action, e.g. a *translate along axis* handle
 3. **`OutsideUI`** Anywhere outside UI or SpatialUI, can be digital objects or the physical world
 
-- `📁 Core`
-    - [`Handedness.cs`](app/Assets/Scripts/Runtime/Input/Core/Handedness.cs) Handle left- and right-handedness
-    - [`RayInteractor.cs`](app/Assets/Scripts/Runtime/Input/Core/RayInteractor.cs)
-    - [`SpatialGraphicRaycaster.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialGraphicRaycaster.cs) Raycasting with UI
-    - [`SpatialInputModule.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialInputModule.cs) Handling of input events that retains focus for either UI interactions or 3D scene interactions. Handles stabilization and smoothing of the spatial pointer
-    - [`SpatialPhysicsRaycaster.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialPhysicsRaycaster.cs) Raycasting with 3D scene
-    - [`SpatialPointerConfiguration.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialPointerConfiguration.cs) Dictates how the spatial pointer should be moved when the user interacts with a specific Spatial UI element.
-    - [`SpatialPointerEvents.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialPointerEvents.cs) Events that spatial UI can listen to to create interactable spatial UI
-    - [`SpatialPointerReticle.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialPointerReticle.cs) Rendering of the spatial pointer
-- `📁 Keyboard` Custom VR keyboard implementation with numeric support
-- `📁 XRController` Handling buttons and rendering of controller
-- [`InputController.cs`](app/Assets/Scripts/Runtime/Input/InputController.cs) Mapping button to high level actions
+
+
+#### `📁 Core`
+
+- [`Handedness.cs`](app/Assets/Scripts/Runtime/Input/Core/Handedness.cs) Handle left- and right-handedness
+- [`RayInteractor.cs`](app/Assets/Scripts/Runtime/Input/Core/RayInteractor.cs) Replacement for `XRRayInteractor` in XR Interaction Toolkit
+- [`SpatialGraphicRaycaster.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialGraphicRaycaster.cs) Raycasting with UI
+- [`SpatialInputModule.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialInputModule.cs) Handling of input events that retains focus for either UI interactions or 3D scene interactions. Handles stabilization and smoothing of the spatial pointer.
+- [`SpatialPhysicsRaycaster.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialPhysicsRaycaster.cs) Raycasting with the 3D scene
+- [`SpatialPointerConfiguration.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialPointerConfiguration.cs) Dictates how the spatial pointer should be moved when the user interacts with a specific Spatial UI element.
+- [`SpatialPointerEvents.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialPointerEvents.cs) Events that spatial UI can listen to to create interactable spatial UI
+- [`SpatialPointerReticle.cs`](app/Assets/Scripts/Runtime/Input/Core/SpatialPointerReticle.cs) Rendering of the spatial pointer
+
+#### `📁 Keyboard`
+
+Custom VR keyboard implementation with numeric support.
+
+#### `📁 XRController` 
+
+Handling buttons and rendering of controller.
+
+#### [`InputController.cs`](app/Assets/Scripts/Runtime/Input/InputController.cs)
+
+Mapping buttons to high level actions. 
 
 ### `📁 Rendering`
 
@@ -184,7 +195,7 @@ Calculating the new position of the *handle* on moving the *spatial pointer* is 
 
 #### Miscellaneous
 
-- [`SpatialContextMenu.cs`](app/Assets/Scripts/Runtime/SpatialUI/SpatialContextMenu.cs) A simple menu that moves in front of the view of the user
+- [`SpatialContextMenu.cs`](app/Assets/Scripts/Runtime/SpatialUI/SpatialContextMenu.cs) A floating menu that rotates towards the user. 
 - [`Visuals.cs`](app/Assets/Scripts/Runtime/SpatialUI/Visuals.cs) Show origin and grid in scene
 
 ### `📁 Tools`
@@ -212,8 +223,6 @@ Calculating the new position of the *handle* on moving the *spatial pointer* is 
 - [`DrawShapeTool.cs`](app/Assets/Scripts/Runtime/Tools/DrawShapeTool.cs) Depends on `OutsideUIBehaviour`. For drawing a primitive shape (see [`RealityShape.cs`](app/Assets/Scripts/Runtime/Document/RealityShape/RealityShape.cs) in `📁 Document`) in 3D space. 
 
 ### `📁 UI`
-
-Custom UI
 
 #### `📁 Binding`
 
@@ -243,9 +252,8 @@ Contains custom UI components that are data driven and better than Unity UI's bu
 ##### Containers
 
 - [`NavigationStack.cs`](app/Assets/Scripts/Runtime/UI/Core/NavigationStack.cs) A stack of views similar to UIKit's NavigationStack. 
-- [`ScrollView.cs`](app/Assets/Scripts/Runtime/UI/Core/ScrollView.cs)
-- [`ScrollViewPool.cs`](app/Assets/Scripts/Runtime/UI/Core/ScrollViewPool.cs)
-- [`ScrollViewScaler.cs`](app/Assets/Scripts/Runtime/UI/Core/ScrollViewScaler.cs)
+- [`ScrollView.cs`](app/Assets/Scripts/Runtime/UI/Core/ScrollView.cs) A scroll view that keeps focus during dragging, even when the pointer exits the scroll view bounds. 
+- [`ScrollViewPool.cs`](app/Assets/Scripts/Runtime/UI/Core/ScrollViewPool.cs) A performant data driven **grid** or **list** view that pools UI elements and only renders the amount of UI elements that are visible. 
 
 ##### Menus
 
@@ -255,10 +263,9 @@ Contains custom UI components that are data driven and better than Unity UI's bu
 ##### Miscellaneous
 
 - [`ColorPicker.cs`](app/Assets/Scripts/Runtime/UI/Core/ColorPicker.cs) ColorPicker with HSV and RGB sliders with value field and and a 2D area for setting for example Hue and Value at the same time. 
-- [`LoadingSpinner.cs`](app/Assets/Scripts/Runtime/UI/Core/LoadingSpinner.cs) A simple rotating spinner for indicating that something is loading
-- [`Notification.cs`](app/Assets/Scripts/Runtime/UI/Core/Notification.cs)
-- [`Tooltip.cs`](app/Assets/Scripts/Runtime/UI/Core/Tooltip.cs)
-- [`TooltipPopup.cs`](app/Assets/Scripts/Runtime/UI/Core/TooltipPopup.cs)
+- [`LoadingSpinner.cs`](app/Assets/Scripts/Runtime/UI/Core/LoadingSpinner.cs) A rotating spinner for indicating that something is loading
+- [`Notification.cs`](app/Assets/Scripts/Runtime/UI/Core/Notification.cs) A notification that hides after a set duration
+- [`Tooltip.cs`](app/Assets/Scripts/Runtime/UI/Core/Tooltip.cs) A tooltip that shows when hovering over a UI element. Hides after a set duration. 
 
 #### `📁 Properties`
 
@@ -286,7 +293,6 @@ Contains implementation for the UI for each specific view (i.e. panel). These pa
 
 - `📁 AssetsView` Logic for displaying asset collections and dragging and dropping RealityAssets into the scene
 - `📁 DocumentsView` Logic for displaying the currently opened document, and other documents that the user has created that they could open, rename or delete. 
-- `📁 Elements`
 - [`ColorsViewController.cs`](app/Assets/Scripts/Runtime/UI/Views/ColorsViewController.cs) Display a colors panel with the currently active
 - [`CreditsViewController.cs`](app/Assets/Scripts/Runtime/UI/Views/CreditsViewController.cs) Display credits and links to license and website
 - [`PropertiesViewController.cs`](app/Assets/Scripts/Runtime/UI/Views/PropertiesViewController.cs) Display properties of the currently selected objects
