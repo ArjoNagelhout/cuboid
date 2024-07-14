@@ -291,8 +291,8 @@ In addition, it works with multiple objects selected at the same time.
 
 Contains implementation for the UI for each specific view (i.e. panel). These panels can be selected in the interface via the panel buttons. 
 
-- `📁 AssetsView` Logic for displaying asset collections and dragging and dropping RealityAssets into the scene
-- `📁 DocumentsView` Logic for displaying the currently opened document, and other documents that the user has created that they could open, rename or delete. 
+- `📁 AssetsView` Display asset collections and dragging and dropping RealityAssets into the scene
+- `📁 DocumentsView` Display the currently opened document, and other documents that the user has created that they could open, rename or delete. 
 - [`ColorsViewController.cs`](app/Assets/Scripts/Runtime/UI/Views/ColorsViewController.cs) Display a colors panel with the currently active
 - [`CreditsViewController.cs`](app/Assets/Scripts/Runtime/UI/Views/CreditsViewController.cs) Display credits and links to license and website
 - [`PropertiesViewController.cs`](app/Assets/Scripts/Runtime/UI/Views/PropertiesViewController.cs) Display properties of the currently selected objects
