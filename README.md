@@ -38,7 +38,7 @@ See `Packages/manifest.json` for all packages. Other than those above, it only c
 
 ### Plugins
 
-These are free and paid plugins retrieved from the **Unity AssetStore** and should be installed to the `Plugins` folder. 
+These are free and paid plugins retrieved from the **Unity AssetStore** and should be installed to the `Plugins` directory. 
 
 - [DOTween by Demigiant](https://dotween.demigiant.com/download.php) `> 1.2.000` (free)
 - [Shapes by Freya Holmér](https://acegikmo.com/shapes/) `4.2.1` (⚠️ paid)
@@ -87,14 +87,14 @@ All code is located in the following directories:
 
 Top level scripts inside `📁 Runtime`:
 
-- [`App.cs`](app/Assets/Scripts/Runtime/App.cs) Main 
-- [`ApplicationData.cs`](app/Assets/Scripts/Runtime/ApplicationData.cs)
+- [`App.cs`](app/Assets/Scripts/Runtime/App.cs) Main class for certain properties that should be global and bindable
+- [`ApplicationData.cs`](app/Assets/Scripts/Runtime/ApplicationData.cs) Bundled metadata such as build number on build
 - [`Binding.cs`](app/Assets/Scripts/Runtime/Binding.cs) Utility class for binding a value to a UI element to keep the UI and data model in sync. 
 - [`CacheController.cs`](app/Assets/Scripts/Runtime/CacheController.cs) Enables the user to clear the cache and to inspect its size
-- [`ColorsController.cs`](app/Assets/Scripts/Runtime/ColorsController.cs)
+- [`ColorsController.cs`](app/Assets/Scripts/Runtime/ColorsController.cs) Global controller for changing the color of all selected objects
 - [`Constants.cs`](app/Assets/Scripts/Runtime/Constants.cs)
-- [`Layers.cs`](app/Assets/Scripts/Runtime/Layers.cs)
-- [`UserData.cs`](app/Assets/Scripts/Runtime/UserData.cs)
+- [`Layers.cs`](app/Assets/Scripts/Runtime/Layers.cs) Layers that exist in the project: 1) Default, 2) UI, 3) SpatialUI, 4) Controllers and 5) Selected
+- [`UserData.cs`](app/Assets/Scripts/Runtime/UserData.cs) Alternative to Unity's built in UserSettings that serializes to Json. 
 
 ### `📁 Commands`
 For storing the editing history to enable fully undoing and redoing all edits made by the user. This employs the command pattern. Commands can be nested and/or combined to create compound commands, e.g. for selecting and moving objects on click and drag. 
@@ -204,4 +204,87 @@ Calculating the new position of the *handle* on moving the *spatial pointer* is 
 
 ### `📁 UI`
 
+Custom UI
+
+#### `📁 Binding`
+
+Contains UI components that are bound to specific data or data types inside the application. Ideally, only the generic versions of these UI Binding classes exist, but as UI is still sometimes defined inside Prefabs, specialized versions need to exist. These are ommitted for brevity. 
+
+- [`BindingButton.cs`](app/Assets/Scripts/Runtime/UI/Binding/BindingButton.cs)
+- [`BindingPopupButton.cs`](app/Assets/Scripts/Runtime/UI/Binding/BindingPopupButton.cs)
+- [`BindingSlider.cs`](app/Assets/Scripts/Runtime/UI/Binding/BindingSlider.cs)
+- [`BindingToggle.cs`](app/Assets/Scripts/Runtime/UI/Binding/BindingSlider.cs)
+
+#### `📁 Core`
+
+Contains custom UI components that are data driven and better than Unity UI's built in components, such as scroll views, sliders and more. 
+
+##### Elements
+
+- [`Button.cs`](app/Assets/Scripts/Runtime/UI/Core/Button.cs) A data driven button
+- [`PopupButton.cs`](app/Assets/Scripts/Runtime/UI/Core/PopupButton.cs) A button for an enum value that on press shows a list of all enum values to pick from. 
+- [`Slider.cs`](app/Assets/Scripts/Runtime/UI/Core/Slider.cs) A data driven slider
+- [`Slider2D.cs`](app/Assets/Scripts/Runtime/UI/Core/Slider2D.cs) A data driven 2D slider (used by the color picker)
+- [`Toggle.cs`](app/Assets/Scripts/Runtime/UI/Core/Toggle.cs) A data driven toggle
+- [`InputField.cs`](app/Assets/Scripts/Runtime/UI/Core/InputField.cs) An input field, adapted from TextMeshPro as that one was broken with text selection and editing in VR. Instantiates the correct keyboard popup based on its value type (e.g. numeric or text). 
+- [`ValueField.cs`](app/Assets/Scripts/Runtime/UI/Core/ValueField.cs) Depends on InputField, binds to a binding that contains a float value. 
+- [`Vector2Field.cs`](app/Assets/Scripts/Runtime/UI/Core/Vector2Field.cs) Contains two `ValueField`s
+- [`Vector3Field.cs`](app/Assets/Scripts/Runtime/UI/Core/Vector3Field.cs) Contains three `ValueField`s
+
+##### Containers
+
+- [`NavigationStack.cs`](app/Assets/Scripts/Runtime/UI/Core/NavigationStack.cs) A stack of views that can be 
+- [`ScrollView.cs`](app/Assets/Scripts/Runtime/UI/Core/ScrollView.cs)
+- [`ScrollViewPool.cs`](app/Assets/Scripts/Runtime/UI/Core/ScrollViewPool.cs)
+- [`ScrollViewScaler.cs`](app/Assets/Scripts/Runtime/UI/Core/ScrollViewScaler.cs)
+
+##### Menus
+
+- [`ContextMenu.cs`](app/Assets/Scripts/Runtime/UI/Core/ContextMenu.cs) A data driven context menu that contains a set of actions that can be performed. 
+- [`DialogBox.cs`](app/Assets/Scripts/Runtime/UI/Core/DialogBox.cs) Similar to a ContextMenu, but with a description and icon for the actions that are to be performed (used for a save file dialog for example)
+
+##### Miscellaneous
+
+- [`ColorPicker.cs`](app/Assets/Scripts/Runtime/UI/Core/ColorPicker.cs) ColorPicker with HSV and RGB sliders with value field and and a 2D area for setting for example Hue and Value at the same time. 
+- [`LoadingSpinner.cs`](app/Assets/Scripts/Runtime/UI/Core/LoadingSpinner.cs) A simple rotating spinner for indicating that something is loading
+- [`Notification.cs`](app/Assets/Scripts/Runtime/UI/Core/Notification.cs)
+- [`Tooltip.cs`](app/Assets/Scripts/Runtime/UI/Core/Tooltip.cs)
+- [`TooltipPopup.cs`](app/Assets/Scripts/Runtime/UI/Core/TooltipPopup.cs)
+
+#### `📁 Properties`
+
+Contains property UI elements. Property UI elements get instantiated by the `PropertiesController` (see [`📁 Document/PropertiesController.cs`](app/Assets/Scripts/Runtime/Document/PropertiesController.cs)). 
+
+The state of the UI elements referenced by the property UI elements reflects the state of the document. Changes are propagated to the document when changed in the UI, and when the document changes, the UI changes (e.g. when performing Undo or Redo). 
+
+Another unique property of properties (he), is that they can update the document live while for example dragging the slider, but only register the set property command on release. 
+
+In addition, it works with multiple objects selected at the same time. 
+
+- [`Property.cs`](app/Assets/Scripts/Runtime/UI/Properties/Property.cs) Base class
+- [`BooleanProperty.cs`](app/Assets/Scripts/Runtime/UI/Properties/BooleanProperty.cs)
+- [`ColorProperty.cs`](app/Assets/Scripts/Runtime/UI/Properties/ColorProperty.cs) Creates a `ColorPicker` popup on clicking on the property
+- [`EnumProperty.cs`](app/Assets/Scripts/Runtime/UI/Properties/EnumProperty.cs) creates a `PopupButton` on clicking on the property
+- [`FloatProperty.cs`](app/Assets/Scripts/Runtime/UI/Properties/FloatProperty.cs) contains a slider and a value field
+- [`IntProperty.cs`](app/Assets/Scripts/Runtime/UI/Properties/IntProperty.cs)
+- [`StringProperty.cs`](app/Assets/Scripts/Runtime/UI/Properties/StringProperty.cs)
+- [`Vector2Property.cs`](app/Assets/Scripts/Runtime/UI/Properties/Vector2Property.cs) contains a `Vector2Field`
+- [`Vector3Property.cs`](app/Assets/Scripts/Runtime/UI/Properties/Vector3Property.cs) contains a `Vector3Field`
+
+#### `📁 Views`
+
+Contains implementation for the UI for each specific view (i.e. panel). These panels can be selected in the interface via the panel buttons. 
+
+- `📁 AssetsView` Logic for displaying asset collections and dragging and dropping RealityAssets into the scene
+- `📁 DocumentsView` Logic for displaying the currently opened document, and other documents that the user has created that they could open, rename or delete. 
+- `📁 Elements`
+- [`ColorsViewController.cs`](app/Assets/Scripts/Runtime/UI/Views/ColorsViewController.cs) Display a colors panel with the currently active
+- [`CreditsViewController.cs`](app/Assets/Scripts/Runtime/UI/Views/CreditsViewController.cs) Display credits and links to license and website
+- [`PropertiesViewController.cs`](app/Assets/Scripts/Runtime/UI/Views/PropertiesViewController.cs) Display properties of the currently selected objects
+- [`SettingsViewController.cs`](app/Assets/Scripts/Runtime/UI/Views/SettingsViewController.cs) Display settings
+- [`ToolsViewController.cs`](app/Assets/Scripts/Runtime/UI/Views/ToolsViewController.cs) Display tools, and the properties of the selected tool, if any. 
+- [`TransformProperties.cs`](app/Assets/Scripts/Runtime/UI/Views/TransformProperties.cs) Display transform properties of selected objects (translation, rotation and scale) using Vector3Fields
+
 ### `📁 Utils`
+
+General utility functions that extend Unity's classes or mitigate some ommision in Unity. 
