@@ -6,9 +6,9 @@ Some of the code and design decisions inside this repository might help someone 
 
 # Cuboid
 
-![Screenshot 2](https://github.com/user-attachments/assets/897dc105-f319-4de7-a672-b6be4fac494c)
+![Screenshot 2](https://github.com/user-attachments/assets/468c4520-3cdf-4d4a-b0b4-54cd38aa66df)
 
-![Screenshot 1](https://github.com/user-attachments/assets/d39d3117-c2c5-4e40-8374-f561e879813b)
+![Screenshot 1](https://github.com/user-attachments/assets/e5a2ad7a-1565-43f9-b0ee-124ee993c6a4)
 
 Cuboid allows you to design for the real world, in the real world. Import high quality assets, and place and manipulate them at world-scale in your environment. Reimagine your living room, your house, or an entire city! 
 
